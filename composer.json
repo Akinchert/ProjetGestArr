@@ -1,0 +1,18 @@
+{
+    "name": "akinchert/gest-arr",
+    "autoload": {
+        "psr-4": {
+            "Akinchert\\GestArr\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Akinchert",
+            "email": "akinchert619@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.10",
+        "setasign/fpdf": "^1.8"
+    }
+}
