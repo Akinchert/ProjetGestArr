@@ -3,7 +3,7 @@
 
       <div class="logo">
         <!-- Uncomment below if you prefer to use an text logo -->
-        <h1><a href="index.php">GestArr</a></h1>
+        <h1><a href="index.php">GestArr<h6>Admin</h6></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">

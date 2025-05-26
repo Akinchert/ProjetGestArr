@@ -4,7 +4,8 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: ./Frontend/login.php');
     exit();
 }
-require ('../Backend/traitements.php');
+require ('..//Backend/requettes.php');
+require ('..//Backend/traitements.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,11 +60,11 @@ require ('../Backend/traitements.php');
       </div>
 
       <div class="hero-info" data-aos="zoom-in" data-aos-delay="100">
-        <h2>Gestion des Services d'Arrondissement<br></h2>
-        <div>
+       <h2><img src="../img/mairie.jpe" alt="" class="img-fluid"> <br>Gestion des Services d'Arrondissement</h2>
+        <!-- <div>
           <a href="#" class="btn-get-started scrollto" data-bs-toggle="modal" data-bs-target="#mentionsLegales">A propos</a>
           <a href="#why-us" class="btn-services scrollto">Tableau de bord</a>         
-        </div>
+        </div> -->
       </div>
 
     </div>
@@ -77,16 +78,15 @@ require ('../Backend/traitements.php');
 
         <header class="section-header">
           <h3>DESCRIPTION</h3>
-          <h4><strong> Le 1er arrondissement de Porto-Novo est une subdivision administrative béninoise. Dans le cadre de la décentralisation 
+            <h4><strong>Le 1er arrondissement de Porto-Novo est une subdivision administrative béninoise. Dans le cadre de la décentralisation 
             au Bénin, Il devient officiellement un arrondissement de la commune de Porto-Novo le 27 mai 2013 après la délibération et adoption par 
             l'Assemblée nationale du Bénin en sa séance du 15 février 2013 de la loi no 2013-05 du 15/02/2013 portant création, organisation, 
             attributions et fonctionnement des unités administratives locales en République du Bénin. Selon le recensement général de la population 
             et de l'habitat de la population de 2013 conduit par l'Institut national de la statistique et de l'analyse économique (INSAE), le 1er 
             arrondissement, à une superfie de 2 km2, d'une population de 33.820 habitants soit 18.405 de sexe feminin et 15.425 de sexe masculin. 
-            Le nombre de quartier est de 29 et de ménages 8.282.</strong></p>
+            Le nombre de quartier est de 29 et de ménages 8.282.</strong></h4>
 
-          <p>l'Arrondissement est animée par le Chef d'Arrondissement Monsieur Latif MOUBARACOU et le personnel administratif: Le Secretaire administratif, Monsieur Waidi CHITOU - 
-          le Chef Division état civil, Monsieur........ - la collaboratrice Madame APHYTI </p>
+          <p>l'Arrondissement est animé par le Chef d'Arrondissement Monsieur Latif MOUBARACOU - le Secretaire administratif de l'Arrodissement et ses collaborateurs</p>
         </header>
         
         <div class="row about-container">
@@ -271,144 +271,7 @@ require ('../Backend/traitements.php');
             </div>
           </div>
       </div>
-  </section><!-- End About Section -->
-
-    <!-- ======= Services Section ======= -->
-    <!-- <section id="services" class="section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h3>Services</h3>
-          <p>Tarifs et délivrance d'acte d'état civil.</p>
-        </header>
-
-        <div class="row justify-content-center">
-
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">    
-              <h4 class="title"><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#legalisation">Légalisation simple</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - l'original du copie - présence obligatoire</p>              
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-            <h4 class="title"><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#legalisation">Souche</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 1000(100)</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#legalisation">Paternité</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - dépôt de signature 200 - Imprimé 100</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a class="nav-link scrollto" href="../Frontend/paiement_service.php" >Copie intégrale acte de naissance</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 1000/copie - imprimé 100/copie - Registre doit se situer dans l'arrondissement</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#legalisation">Certificat de vie</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - imprimé 100 - Présence obligatoire</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Acte de decès</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - Fiche délégué - </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Droit de mariage</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> 45.000 (40000 quittance- CIP des deux conjoins et des temoins - certificat de celibat/l'ANIP) </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Dépôt de signature</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 200 - Carte d'identiée- Présence obligatoire</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Procuration</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - dépôt de sigature</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Engagement</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - dépôt de signature</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Certificat d'hébergement</a></h4>
-              <p class="description"><b>Procedure à respecter:</b>7000 (Timbre de 500 - .....)</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Certificat d'individualité</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - l'original des justifs - 04 dépôt de signature</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Certificat de non séparation de corps non divorce et non remariage</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500f - l'original de l'acte de mariage et de decès du conjoint- imprimé 100f - dépôt de signature de deux temoins et de l'interressé</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Sortie mineur</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Mairie centrale</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Attestation de confimation de décès</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 1000 - fiche délégué</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Autorisations parentale</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - Dépôt de signature - imprimé 100f Acte de naissance et CIP des deux parties</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Service militaire</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Mairie</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Certificat de concubinage</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> 5000 (Timbre de 500 - l'original des pieces - dépot de sigature des conjoints)</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Décharge</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - dépôt de signature du vendeur, d'acheteur et des deux témoins</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Déclaration sur l'honneur</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> 5000 (Timbre de 500 - signature)</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>End Services Section -->
+  </section><!-- End About Section -->    
 
     <!-- ======= Why Us Section ======= -->
     <section id="why-us">
@@ -598,13 +461,12 @@ require ('../Backend/traitements.php');
 
       </div>
     </section><!-- End Testimonials Section -->
+    
     <?php 
       include ('../Frontend/modal_detail.php');
-      include ('../Frontend/modal_registre_service.php');
       include ('../Frontend/modal_a_propos.php');
       include ('../Frontend/modal_correspondance.php');
-      include ('../Frontend/modal_service.php');
-      
+      //include ('../Frontend/modal_service.php');      
     ?>
   </main><!-- End #main -->
 

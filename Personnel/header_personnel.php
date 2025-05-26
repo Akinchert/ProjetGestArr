@@ -3,7 +3,7 @@
 
       <div class="logo">
         <!-- Uncomment below if you prefer to use an text logo -->
-        <h1><a href="index.php">GestArr</a></h1>
+        <h1><a href="#">GestArr<h6>Personnel</h6></a></h1> 
       </div>
 
       <nav id="navbar" class="navbar">
@@ -11,11 +11,10 @@
           <li><a class="nav-link scrollto active" href="#hero">Acceuil</a></li>
           <li><a class="nav-link scrollto" href="#about">Description</a></li>          
           <li><a class="nav-link scrollto" href="#portfolio">Patrimoine</a></li>
-          <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModaldmd">Services</a></li>               
+          <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModaldmd">Services en ligne</a></li>               
           <li class="dropdown"><a href="#"><span>Gestion</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModal">Registre de services</a></li>
-              <li><a href="../Frontend/services.php">Services</a></li>
+              <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalR">Registre de services</a></li>              
               <li class="dropdown"><a href="#"><span>Registre Courrier</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li class="dropdown"><a href="#"><span>Arrivée</span> <i class="bi bi-chevron-right"></i></a>

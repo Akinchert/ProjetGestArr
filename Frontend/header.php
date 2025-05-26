@@ -12,12 +12,12 @@
           <li><a class="nav-link scrollto active" href="#hero">Acceuil</a></li>
           <li><a class="nav-link scrollto" href="#about">Description</a></li>          
           <li><a class="nav-link scrollto" href="#portfolio">Patrimoine</a></li>
-          <li><a class="nav-link scrollto" href="#services">Type de services</a></li>          
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>          
           <li class="dropdown"><a href="#"><span></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModaldmd">Soumettre la demande</a></li>
-              <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalsv">Suivi de la demande</a></li> 
-              <li><a class="nav-link scrollto" href="../Frontend/reclamation.php">reclamation</a></li>        
+              <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalsv">Suivi de la demande</a></li>
+              <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalrcm">reclamation</a></li>
             </ul>
           </li>          
           <li><a class="nav-link scrollto" href="../Frontend/logout.php">Déconnexion</a></li>
@@ -28,3 +28,4 @@
 
     </div>
   </header><!-- #header -->
+  

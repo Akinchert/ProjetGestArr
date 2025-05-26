@@ -4,9 +4,9 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: ./Frontend/login.php');
     exit();
 }
-//include ('../Backend/session.php');
 require ('../Backend/traitements.php');
 ?>
+  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -409,51 +409,14 @@ require ('../Backend/traitements.php');
         </div>
 
       </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Why Us Section ======= -->
-    <section id="why-us">
-      <div class="container" data-aos="fade-up">
-        <header class="section-header">
-          <h3>TABLEAU DE BORD</h3>
-          <p>Statistique des demandes de services</p>
-        </header>
-
-        <div class="row counters" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Légalisation</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Déces</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1364" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Mariage</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Naissance</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Why Us Section -->
+    </section><!-- End Services Section -->    
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="clearfix">
       <div class="container" data-aos="fade-up">
-
         <header class="section-header">
           <h3 class="section-title">Patrimoine au sein du Premier Arrondissement</h3>
         </header>
-
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12">
             <ul id="portfolio-flters">
@@ -587,6 +550,7 @@ require ('../Backend/traitements.php');
         </div>
 
       </div>
+      
     </section><!-- End Portfolio Section -->
 
    
@@ -599,13 +563,17 @@ require ('../Backend/traitements.php');
 
       </div>
     </section><!-- End Testimonials Section -->
-    <?php 
+    <?php if(isset($info)){ echo'<script> alert(\''.$info.'\')</script>';  }  ?>
+    <?php if(isset($confirmation)){ echo'<script> alert(\''.$confirmation.'\')</script>';  } ?>
+    <?php if(isset($confirmationn)){ echo'<script> alert(\''.$confirmationn.'\')</script>';  }  ?>
+    <?php     
       include ('../Frontend/modal_detail.php');
-      include ('../Frontend/modal_registre_service.php');
+      //include ('../Frontend/modal_registre_service.php');
       include ('../Frontend/modal_a_propos.php');
       include ('../Frontend/modal_correspondance.php');
       include ('../Frontend/modal_service.php');
     ?>
+    
   </main><!-- End #main -->
 
   <?php include ('../Frontend/footer.php');?>

@@ -25,25 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $erreur = "Identifiants incorrects.";
     }
 
-
-//         header('Location: ../Frontend/dashboard.php');
-//         exit();
-//     } else {
-//         $message = "Nom d'utilisateur  mot de passe incorrect.";
-//     }
-// }
-
-// if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
-//   $_SESSION['user'] = $user;
-//   if ($user['role'] === 'admin') {
-//       header("Location: admin/dashboard.php");
-//   } else {
-//       header("Location: soumettre_demande.php");
-//   }
-//   exit;
-// } else {
-//   $erreur = "Identifiants incorrects.";
-// }
 }
 ?>
 
@@ -89,55 +70,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-<header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
         <!-- Uncomment below if you prefer to use an text logo -->
-        <h1><a href="#">GestArr</a></h1>
+        <h1><a href="#">GestArr<h6>Page de connexion</h6></a></h1>
       </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="../index.php">Acceuil</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
     </div>
   </header><!-- #header -->
-
-  
-<?php
-// session_start();
-// require('connexion.php');
-// if (isset($_POST['valider'])){
-//   $noms = $_POST['nom'];
-//   $passwords =($_POST['password']);
-//   $query = $donnees->prepare("SELECT * FROM users WHERE nom= ?");
-//   $query->execute(array($noms));
-//   $rows = $query->fetch();
-
-//  if(  $noms == $rows['nom'] ){
-//     if(password_verify($passwords, $rows['password'],)){
-//        $_SESSION['nom'] = $rows['nom'];
-//         $_SESSION['id'] = $rows['id'];
-//         $_SESSION['email'] = $rows['email'];
-//       header("Location: acceuil.php");
-      
-//   }
-//   else{
-//     $message='mot de passe incorrecte';
-//   }
-// }
-// else{
-//   $message='Nom invalide';
-// }
-
-
-//   }
-  
-?>
+ 
    <main id="main">
     <div class="container">
       <section id="hero" class=" clearfix min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -201,21 +143,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </main><!-- End #main -->
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- Vendor JS Files -->
-<script src="./assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="./assets/vendor/aos/aos.js"></script>
-<script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="./assets/vendor/php-email-form/validate.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="./assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="./assets/vendor/aos/aos.js"></script>
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/vendor/php-email-form/validate.js"></script>
 
-<!-- Template Main JS File -->
-<script src="./assets/js/main.js"></script>
-
-
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
 </body>
-
 </html>
