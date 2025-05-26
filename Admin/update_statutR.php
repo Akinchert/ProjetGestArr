@@ -11,7 +11,7 @@ exit();
 
 //...................................
 
-include('..//Admin/mail.php');
+include('../Admin/mail.php');
 
 // après mise à jour du statut :
 $req = $pdo->prepare("SELECT email, nom_citoyen, numero_suivi FROM demandes WHERE id = ?");

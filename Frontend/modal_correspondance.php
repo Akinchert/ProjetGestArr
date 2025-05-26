@@ -385,3 +385,48 @@
         </div>
     </div>
 </div>
+
+<?php if(isset($message)){ echo'<script> alert(\''.$message.'\')</script>';  }  ?>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card-body my-4">
+            <div class="modal fade" id="Ajouter" tabindex="-1" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"> <strong>Ajouter un nouveau service</strong></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">                                  
+                            <form class="row g-3" action="" method="post"> <!-- General Form Elements -->
+                                <div class="col-md-5">
+                                    <label for="validationDefault04" class="form-label">Nom du service</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" name="nom" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <label for="validationDefault04" class="form-label">Description</label>
+                                    <div class="input-group">
+                                        <textarea type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" name="description" required></textarea>
+                                    </div>
+                                </div>                         
+                                <div class="col-md-12">
+                                    <label for="validationDefault04" class="form-label">Prix (en FCFA)</label>
+                                    <div class="input-group">
+                                        <input type="number" step="0.01" name="prix" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                                    </div>
+                                </div>           
+                                <div class="modal-footer">
+                                    <button type="sumit" class="btn btn-primary" name='submitAj'>Ajouter</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>                                    
+                                </div>
+
+                            </form><!-- End General Form Elements -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Extra Large Modal-->
+        </div>
+    </div>
+</div>

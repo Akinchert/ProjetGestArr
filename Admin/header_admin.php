@@ -17,8 +17,9 @@
               <li><a href="../Admin/generer_attestation.php?id=<?= $demande['id'] ?>" class="nav-link scrollto">Télécharger PDF</a></li>
               <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModal">Registre de services</a></li>
               <li><a href="../Admin/services.php">Services</a></li>
-              <li><a href="../Admin/reclamation.php">Reclamation</a></li>
-              <li><a href="demande_details.php?id=<?= $demande['id'] ?>" class="nav-link scrollto">Suivi</a></li>
+              <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#ExtralargeModal1">Reclamation</a></li>
+              <!-- <li><a href="../Frontend/demande_details.php?id=<?= $demande['id'] ?>" class="nav-link scrollto">Suivi</a></li> -->
+               <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalsv">Suivi de la demande</a></li>
               <li class="dropdown"><a href="#"><span>Registre Courrier</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li class="dropdown"><a href="#"><span>Arrivée</span> <i class="bi bi-chevron-right"></i></a>

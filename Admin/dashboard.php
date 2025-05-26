@@ -273,143 +273,6 @@ require ('../Backend/traitements.php');
       </div>
   </section><!-- End About Section -->
 
-    <!-- ======= Services Section ======= -->
-    <!-- <section id="services" class="section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h3>Services</h3>
-          <p>Tarifs et délivrance d'acte d'état civil.</p>
-        </header>
-
-        <div class="row justify-content-center">
-
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">    
-              <h4 class="title"><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#legalisation">Légalisation simple</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - l'original du copie - présence obligatoire</p>              
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-            <h4 class="title"><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#legalisation">Souche</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 1000(100)</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#legalisation">Paternité</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - dépôt de signature 200 - Imprimé 100</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a class="nav-link scrollto" href="../Frontend/paiement_service.php" >Copie intégrale acte de naissance</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 1000/copie - imprimé 100/copie - Registre doit se situer dans l'arrondissement</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#legalisation">Certificat de vie</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - imprimé 100 - Présence obligatoire</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Acte de decès</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - Fiche délégué - </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Droit de mariage</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> 45.000 (40000 quittance- CIP des deux conjoins et des temoins - certificat de celibat/l'ANIP) </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Dépôt de signature</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 200 - Carte d'identiée- Présence obligatoire</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Procuration</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - dépôt de sigature</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Engagement</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - dépôt de signature</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Certificat d'hébergement</a></h4>
-              <p class="description"><b>Procedure à respecter:</b>7000 (Timbre de 500 - .....)</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Certificat d'individualité</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - l'original des justifs - 04 dépôt de signature</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Certificat de non séparation de corps non divorce et non remariage</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500f - l'original de l'acte de mariage et de decès du conjoint- imprimé 100f - dépôt de signature de deux temoins et de l'interressé</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Sortie mineur</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Mairie centrale</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Attestation de confimation de décès</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 1000 - fiche délégué</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Autorisations parentale</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - Dépôt de signature - imprimé 100f Acte de naissance et CIP des deux parties</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Service militaire</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Mairie</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Certificat de concubinage</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> 5000 (Timbre de 500 - l'original des pieces - dépot de sigature des conjoints)</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Décharge</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> Timbre de 500 - dépôt de signature du vendeur, d'acheteur et des deux témoins</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h4 class="title"><a href="">Déclaration sur l'honneur</a></h4>
-              <p class="description"><b>Procedure à respecter:</b> 5000 (Timbre de 500 - signature)</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>End Services Section -->
-
     <!-- ======= Why Us Section ======= -->
     <section id="why-us">
       <div class="container" data-aos="fade-up">
@@ -421,8 +284,8 @@ require ('../Backend/traitements.php');
         <div class="row counters" data-aos="fade-up" data-aos-delay="100">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Légalisation</p>
+            <span data-purecounter-start="0" data-purecounter-end="<?php echo"$nb";?>" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Actes état-civil</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">

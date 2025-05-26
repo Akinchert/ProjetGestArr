@@ -4,6 +4,9 @@ require ('..//Backend/connexion.php');
 
 $servicenom = $pdo->query('SELECT nom  FROM services');
   
+$dmd = $pdo->query('SELECT COUNT(*) as nombre FROM demandes');
+$array=$dmd->fetchALL();
+$nb=count($array);
 
 if(isset($_POST['submitdmd'])) {
     $numero_suivi = uniqid('DOSSIER-');
@@ -62,5 +65,53 @@ if(isset($_POST['submitR'])) {
     $confirmation = "Votre demande a été soumise. Numéro de suivi :<strong>$numero_suivi</strong>";
     echo "Demande soumise avec succès.";
 }
+
+// if (isset($_POST['submitAj'])) {
+//     $nom = htmlspecialchars($_POST['nom']);
+//     $description = htmlspecialchars($_POST['description']);
+//     $prix = $_POST['prix'];
+
+//     $stmt = $pdo->prepare("INSERT INTO services (nom, description, prix) VALUES (?, ?, ?)");
+//     if ($stmt->execute([$nom, $description, $prix])) {
+//         header('Location: ../Admin/dashboard.php');
+//         exit();
+//     } else {
+//         $message = "Erreur lors de l'ajout du service.";
+//     }
+// }
+
+// $message = '';
+// $id = $_GET['id'] ?? 0;
+
+// if ($id) {
+//     $stmt = $pdo->prepare("SELECT * FROM services WHERE id = ?");
+//     $stmt->execute([$id]);
+//     $service = $stmt->fetch();
+
+//     if (!$service) {
+//         header('Location: services.php');
+//         exit();
+//     }
+
+//     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//         $nom = htmlspecialchars($_POST['nom']);
+//         $description = htmlspecialchars($_POST['description']);
+//         $prix = htmlspecialchars ($_POST['prix']);
+
+//         $stmt = $pdo->prepare("UPDATE services SET nom = ?, description = ?, prix = ? WHERE id = ?");
+//         if ($stmt->execute([$nom, $description, $prix, $id])) {
+//             header('Location: services.php');
+//             exit();
+//         } else {
+//             $message = "Erreur lors de la modification du service.";
+//         }
+//     }
+// } else {
+//     header('Location: services.php');
+//     exit();
+// }
+
+$stmt = $pdo->query("SELECT * FROM reclamations ORDER BY date_soumission DESC");
+$reclamations = $stmt->fetchAll();
 ?>
 

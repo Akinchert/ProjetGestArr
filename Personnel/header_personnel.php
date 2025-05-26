@@ -11,10 +11,11 @@
           <li><a class="nav-link scrollto active" href="#hero">Acceuil</a></li>
           <li><a class="nav-link scrollto" href="#about">Description</a></li>          
           <li><a class="nav-link scrollto" href="#portfolio">Patrimoine</a></li>
-          <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModaldmd">Services en ligne</a></li>               
+          <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModaldmd">Services en ligne</a></li>                        
           <li class="dropdown"><a href="#"><span>Gestion</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalR">Registre de services</a></li>              
+             <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalsv">Suivi de la demande</a></li>  
+            <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalR">Registre de services</a></li>              
               <li class="dropdown"><a href="#"><span>Registre Courrier</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li class="dropdown"><a href="#"><span>Arrivée</span> <i class="bi bi-chevron-right"></i></a>
