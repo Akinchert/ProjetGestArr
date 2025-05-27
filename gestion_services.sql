@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 26 mai 2025 à 10:10
+-- Généré le : mar. 27 mai 2025 à 20:02
 -- Version du serveur : 10.4.20-MariaDB
 -- Version de PHP : 8.0.8
 
@@ -67,7 +67,17 @@ INSERT INTO `demandes` (`id`, `numero_suivi`, `nom_demandeur`, `email`, `service
 (23, 'DOSSIER-6826163c990ef', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', 'En attente'),
 (24, 'DOSSIER-68261853b6c8f', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', 'En attente'),
 (25, 'DOSSIER-682618afe183a', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', 'En attente'),
-(26, 'DOSSIER-6830c6dae6de5', 'lola', 'akinchert@gmail.com', 'légalisation', '2025-05-23', 'En attente');
+(26, 'DOSSIER-6830c6dae6de5', 'lola', 'akinchert@gmail.com', 'légalisation', '2025-05-23', 'Traitée'),
+(27, 'DOSSIER-6835b8779352d', 'AKANY Liliane', 'akinchert@yahoo.fr', 'Autorisation parentale PASSEPORT', '2025-05-27', 'En attente'),
+(28, 'DOSSIER-6835bbb81a408', 'olaitan DANGBE', 'akinchert619@gmail.com', 'Autorisation parentale VISA', '2025-05-27', 'En attente'),
+(29, 'DOSSIER-6835cbad7d905', 'olaitan DANGBE', 'akinchert619@gmail.com', 'Autorisation parentale VISA', '2025-05-27', 'En attente'),
+(30, 'DOSSIER-6835cbd334bb1', 'AKANY Liliane', 'akinchert619@gmail.com', 'Procuration', '2025-05-27', 'En attente'),
+(31, 'DOSSIER-6835cf59c745f', 'AKANY Liliane', 'akinchert619@gmail.com', 'Procuration', '2025-05-27', 'En attente'),
+(32, 'DOSSIER-6835d06e53f11', 'AKANY Liliane', 'akinchert619@gmail.com', 'Procuration', '2025-05-27', 'En attente'),
+(33, 'DOSSIER-6835d0e7f24b1', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-27', 'En attente'),
+(34, 'DOSSIER-6835d338f0d3f', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'Procuration', '2025-05-27', 'En attente'),
+(35, 'DOSSIER-6835d55265d48', 'AKANY Liliane', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-27', 'En attente'),
+(36, 'DOSSIER-6835e00bf3594', 'AKANY Liliane', 'akinchert619@gmail.com', 'Copie Integrale', '2025-05-27', 'En attente');
 
 -- --------------------------------------------------------
 
@@ -105,6 +115,31 @@ INSERT INTO `reclamations` (`id`, `nom_citoyen`, `email`, `type_reclamation`, `m
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `registre`
+--
+
+CREATE TABLE `registre` (
+  `id` int(11) NOT NULL,
+  `numero_suivi` varchar(50) NOT NULL,
+  `nom_demandeur` varchar(100) NOT NULL,
+  `telephone` varchar(100) NOT NULL,
+  `entite` varchar(100) NOT NULL,
+  `service` varchar(100) NOT NULL,
+  `date_demande` date NOT NULL,
+  `observations` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `registre`
+--
+
+INSERT INTO `registre` (`id`, `numero_suivi`, `nom_demandeur`, `telephone`, `entite`, `service`, `date_demande`, `observations`) VALUES
+(1, 'REG.1ER.ARR/PN-6835f21c02f54', 'AKADIRI Faicole', '0197458474', 'halil', 'Mariage', '2025-05-27', 'Dépôt du droit de mariage et les pièces. A programmer'),
+(2, 'REG.1ER.ARR/PN-6835fa788b769', 'AKANY Liliane', '0197458474', 'halil', 'Paternite', '2025-05-27', 'aucun');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `services`
 --
 
@@ -121,10 +156,13 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `nom`, `description`, `prix`, `created_at`) VALUES
-(1, 'Service de nettoyage', 'Nettoyage des rues', '0.00', '2025-05-06 20:48:03'),
-(2, 'Collecte des déchets', 'Ramassage quotidien des ordures', '0.00', '2025-05-06 20:48:03'),
-(5, 'légalisation', 'Timbre de 500 et la copie originale', '0.00', '2025-05-08 10:36:46'),
-(6, 'Copie Integrale', 'Timbre 1000 - Copie de la souche', '1200.00', '2025-05-08 11:15:44');
+(6, 'Copie Integrale', 'Timbre 1000 - Copie de la souche', '2200.00', '2025-05-08 11:15:44'),
+(7, 'Autorisation parentale VISA', 'Copie du CIP des parents et du mineur', '1300.00', '2025-05-26 09:50:51'),
+(8, 'Autorisation parentale PASSEPORT', 'Copie du CIP des parents et du mineur', '1300.00', '2025-05-26 10:13:58'),
+(9, 'Légalisation', 'Timbre de 500 et la copie originale', '500.00', '2025-05-26 11:28:57'),
+(10, 'Copie simple', 'Copie de la souche', '1200.00', '2025-05-26 11:31:39'),
+(11, 'Procuration', 'Copie de CIP des deux parties', '1300.00', '2025-05-26 11:40:34'),
+(12, 'Certificat de décès', 'Fiche de renseignement - Cip du défunt et du déclarant', '2300.00', '2025-05-26 11:42:28');
 
 -- --------------------------------------------------------
 
@@ -261,6 +299,12 @@ ALTER TABLE `reclamations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `registre`
+--
+ALTER TABLE `registre`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `services`
 --
 ALTER TABLE `services`
@@ -288,7 +332,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `demandes`
 --
 ALTER TABLE `demandes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT pour la table `reclamations`
@@ -297,10 +341,16 @@ ALTER TABLE `reclamations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT pour la table `registre`
+--
+ALTER TABLE `registre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `suivi_dossiers`
