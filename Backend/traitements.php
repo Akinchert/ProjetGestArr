@@ -5,9 +5,32 @@ require ('..//Backend/connexion.php');
 $servicenom = $pdo->query('SELECT nom  FROM services');
   
 $dmd = $pdo->query('SELECT COUNT(*) as nombre FROM demandes');
-$array=$dmd->fetchALL();
-$nb=count($array);
+$nb=$dmd->fetchColumn();
 
+$dmd = $pdo->query("SELECT COUNT(*) as nombre FROM registre where service= 'Mariage'");
+$nb1=$dmd->fetchColumn();
+
+$dmd = $pdo->query("SELECT COUNT(*) as nombre FROM registre where service= 'Deces'");
+$nb2=$dmd->fetchColumn();
+
+$dmd = $pdo->query("SELECT COUNT(*) as nombre FROM registre where service= 'Paternite'");
+$nb3=$dmd->fetchColumn();
+
+$dmd = $pdo->query("SELECT COUNT(*) as nombre FROM registre where service= 'Naissance'");
+$nb4=$dmd->fetchColumn();
+
+$dmd = $pdo->query("SELECT COUNT(*) as nombre FROM registre where service= 'souche'");
+$nb5=$dmd->fetchColumn();
+
+$dmd = $pdo->query("SELECT COUNT(*) as nombre FROM registre where service= 'copieS'");
+$nb6=$dmd->fetchColumn();
+
+$dmd = $pdo->query("SELECT COUNT(*) as nombre FROM registre where service= 'copieI'");
+$nb7=$dmd->fetchColumn();
+
+
+
+require ('../Backend/sendMail.php');
 if(isset($_POST['submitdmd'])) {
     $numero_suivi = uniqid('DOSSIER-');
     $nom_demandeur = $_POST['nom_demandeur'];
@@ -19,8 +42,29 @@ if(isset($_POST['submitdmd'])) {
     $stmt = $pdo->prepare("INSERT INTO demandes (numero_suivi, nom_demandeur, email, service, date_demande, statut) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->execute (array($numero_suivi, $nom_demandeur, $email, $service, $date_demande, $statut));
    
-    $confirmation = "Votre demande a été soumise. Numéro de suivi :<strong>$numero_suivi</strong>";
-    echo "Demande soumise avec succès.";
+
+    sendCustomMail($email, $nom_demandeur, "Confirmation de votre demande", "
+    Bonjour $nom_demandeur,<br><br>
+    Votre demande \"$service\" a bien été enregistrée.<br>
+    Code de suivi : <b>$numero_suivi</b>.<br><br>
+    Merci pour votre confiance.<br>
+    1er Arrondissement de Porto-Novo");
+    $confirmation = "Votre demande a été soumise. Numéro de suivi :$numero_suivi consulter également votre compte $email";
+    
+    // $confirmation = "Votre demande a été soumise. Numéro de suivi :<strong>$numero_suivi</strong>";
+    // echo "Demande soumise avec succès.";
+    //$code_suivi = strtoupper(substr(uniqid(), -8));
+
+// Envoi d'un mail de confirmation
+// $to = $email;
+// $subject = "Confirmation de votre demande administrative";
+// $message_mail = "Bonjour $nom_demandeur,\n\n";
+// $message_mail .= "Votre demande de type \"$service\" a bien été reçue.\n";
+// $message_mail .= "Code de suivi : $numero_suivi\n\n";
+// $message_mail .= "Nous vous informerons par mail lors du traitement.\n\nCordialement,\n1er Arrondissement de Porto-Novo";
+
+// mail($to, $subject, $message_mail);
+// $confirmation = "Votre demande a été soumise. Code de suivi : <strong>$numero_suivi</strong>";
 }
 
 $info = '';
@@ -66,52 +110,24 @@ if(isset($_POST['submitR'])) {
     echo "Demande soumise avec succès.";
 }
 
-// if (isset($_POST['submitAj'])) {
-//     $nom = htmlspecialchars($_POST['nom']);
-//     $description = htmlspecialchars($_POST['description']);
-//     $prix = $_POST['prix'];
-
-//     $stmt = $pdo->prepare("INSERT INTO services (nom, description, prix) VALUES (?, ?, ?)");
-//     if ($stmt->execute([$nom, $description, $prix])) {
-//         header('Location: ../Admin/dashboard.php');
-//         exit();
-//     } else {
-//         $message = "Erreur lors de l'ajout du service.";
-//     }
-// }
-
-// $message = '';
-// $id = $_GET['id'] ?? 0;
-
-// if ($id) {
-//     $stmt = $pdo->prepare("SELECT * FROM services WHERE id = ?");
-//     $stmt->execute([$id]);
-//     $service = $stmt->fetch();
-
-//     if (!$service) {
-//         header('Location: services.php');
-//         exit();
-//     }
-
-//     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//         $nom = htmlspecialchars($_POST['nom']);
-//         $description = htmlspecialchars($_POST['description']);
-//         $prix = htmlspecialchars ($_POST['prix']);
-
-//         $stmt = $pdo->prepare("UPDATE services SET nom = ?, description = ?, prix = ? WHERE id = ?");
-//         if ($stmt->execute([$nom, $description, $prix, $id])) {
-//             header('Location: services.php');
-//             exit();
-//         } else {
-//             $message = "Erreur lors de la modification du service.";
-//         }
-//     }
-// } else {
-//     header('Location: services.php');
-//     exit();
-// }
 
 $stmt = $pdo->query("SELECT * FROM reclamations ORDER BY date_soumission DESC");
 $reclamations = $stmt->fetchAll();
+
+if(isset($_POST['submitRe'])) {
+    $numero_suivi = uniqid('REG.1ER.ARR/PN-');
+    $nom_demandeur = $_POST['nom_demandeur'];
+    $telephone = $_POST['telephone'];
+    $entite = $_POST['entite'];
+    $service = $_POST['service'];
+    $date_demande = date('Y-m-d');
+    $observations = $_POST['observations'];
+
+    $stmt = $pdo->prepare("INSERT INTO registre (numero_suivi, nom_demandeur, telephone, entite, service, date_demande, observations) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->execute (array($numero_suivi, $nom_demandeur, $telephone,  $entite, $service, $date_demande, $observations));
+   
+    $confirmation = "Votre demande a été soumise. Numéro de suivi :$numero_suivi consulter également votre numero $telephone";
+    
+}
 ?>
 

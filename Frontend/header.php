@@ -20,7 +20,7 @@
               <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalrcm">reclamation</a></li>
             </ul>
           </li>          
-          <li><a class="nav-link scrollto" href="../Frontend/logout.php">Déconnexion</a></li>
+          <li><a class="nav-link scrollto" href="../Frontend/logout.php" onclick="return confirm(' Confirmer la deconnexion ?')";>Déconnexion</a></li>
           <li><a class="nav-link scrollto" href="#">Bienvenue, <?= $_SESSION['username'] ?></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

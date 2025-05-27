@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'akinchert/gest-arr',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'fde5197b764101e8c84205b3366bc8c089ad802c',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'akinchert/gest-arr' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'fde5197b764101e8c84205b3366bc8c089ad802c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

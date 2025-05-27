@@ -284,23 +284,43 @@ require ('../Backend/traitements.php');
         <div class="row counters" data-aos="fade-up" data-aos-delay="100">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="<?php echo"$nb";?>" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="<?php echo $nb;?>" data-purecounter-duration="1" class="purecounter"></span>
             <p>Actes état-civil</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="<?php echo $nb2;?>" data-purecounter-duration="1" class="purecounter"></span>
             <p>Déces</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1364" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="<?php echo $nb1;?>" data-purecounter-duration="1" class="purecounter"></span>
             <p>Mariage</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="<?php echo $nb4;?>" data-purecounter-duration="1" class="purecounter"></span>
             <p>Naissance</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="<?php echo $nb3;?>" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Paternité</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="<?php echo $nb5;?>" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Souche</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="<?php echo $nb6;?>" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Copie simple</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="<?php echo $nb7;?>" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Copie intégrale</p>
           </div>
 
         </div>

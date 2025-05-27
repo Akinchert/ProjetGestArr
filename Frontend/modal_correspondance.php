@@ -349,32 +349,33 @@
                                     </div>
                                 </div>
                                 <div class="col-md-5">
-                                    <label for="validationDefault04" class="form-label">Entité traitante</label>
-                                    <select class="form-select" id="validationDefault04" name="entite" >
-                                        <option value=""selected></option>
-                                        <?php  while($list_traitement = $servicenom->fetch()) :?>            
-                                        <option value="<?= $list_traitement['nom'] ?>"><?= $list_traitement['nom'] ?></option>
-                                        <?php endwhile ?>
+                                    <label for="validationDefault04" class="form-label">Entité traitante</label>                                    
+                                    <select class="form-select" id="validationDefault04" name="entite" >           
+                                        <option value="<?= $_SESSION['username'] ?>"><?= $_SESSION['username'] ?></option>                                   
                                     </select>
                                 </div>  
                                 <div class="col-md-7">
                                     <label for="validationDefault04" class="form-label">Services</label>
-                                    <select class="form-select" id="validationDefault04" name="service" >
-                                        <option value=""selected></option>
-                                        <?php  while($list_service = $servicenom->fetch()) :?>            
-                                        <option value="<?= $list_service['nom'] ?>"><?= $list_service['nom'] ?></option>
-                                        <?php endwhile ?>
+                                    <select class="form-select" id="validationDefault04" name="service">
+                                        <option value="" selected></option>
+                                        <option value="Mariage">Mariage</option>
+                                        <option value="Deces">Décès</option>
+                                        <option value="Paternite">Paternité</option>
+                                        <option value="Naissance">Naissance</option>
+                                        <option value="souche">Souche</option>
+                                        <option value="copieS">Copie simple</option>
+                                        <option value="copieI">Copie Intégrale</option>
                                     </select>
                                 </div>                         
                                   <div class="col-md-12">
                                     <label for="validationDefault04" class="form-label">Observations</label>
                                     <div class="input-group">
-                                        <textarea name="message" class="form-control mb-2" rows="5" placeholder="Votre message..." required></textarea>
+                                        <textarea name="observations" class="form-control mb-2" rows="5" placeholder="Votre message..." required></textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                                    <button type="sumit" class="btn btn-primary" name='submitR'>Enregistrer</button>
+                                    <button type="sumit" class="btn btn-primary" name='submitRe'onclick="return confirm(' Confirmer la demande ?')";>Enregistrer</button>
                                 </div>
 
                             </form><!-- End General Form Elements -->
