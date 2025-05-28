@@ -1,6 +1,5 @@
 <?php
-require ('..//Backend/connexion.php');
-//require ('..//Backend/traitements.php'); 
+require ('..//Backend/connexion.php'); 
 
 $servicenom = $pdo->query('SELECT nom  FROM services');
   
@@ -117,17 +116,23 @@ $reclamations = $stmt->fetchAll();
 if(isset($_POST['submitRe'])) {
     $numero_suivi = uniqid('REG.1ER.ARR/PN-');
     $nom_demandeur = $_POST['nom_demandeur'];
+    $email = $_POST['email'];
     $telephone = $_POST['telephone'];
     $entite = $_POST['entite'];
     $service = $_POST['service'];
     $date_demande = date('Y-m-d');
     $observations = $_POST['observations'];
 
-    $stmt = $pdo->prepare("INSERT INTO registre (numero_suivi, nom_demandeur, telephone, entite, service, date_demande, observations) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->execute (array($numero_suivi, $nom_demandeur, $telephone,  $entite, $service, $date_demande, $observations));
+    $stmt = $pdo->prepare("INSERT INTO registre (numero_suivi, nom_demandeur, email, telephone, entite, service, date_demande, observations) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->execute (array($numero_suivi, $nom_demandeur,  $email, $telephone,  $entite, $service, $date_demande, $observations));
    
     $confirmation = "Votre demande a été soumise. Numéro de suivi :$numero_suivi consulter également votre numero $telephone";
     
 }
+    $count=1;
+    $reponse = $pdo ->query("SELECT * FROM registre ORDER BY date_demande DESC");
+
+          
 ?>
+
 

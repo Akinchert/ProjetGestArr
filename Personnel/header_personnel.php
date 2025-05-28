@@ -15,7 +15,12 @@
           <li class="dropdown"><a href="#"><span>Gestion</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
              <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalsv">Suivi de la demande</a></li>  
-            <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalR">Registre de services</a></li>              
+              <li class="dropdown"><a href="#"><span>Registre de services</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalR">Enregistrer</a></li>
+                  <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#ExtralargeModal2">Afficher</a></li>
+                </ul>
+              </li>                           
               <li class="dropdown"><a href="#"><span>Registre Courrier</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li class="dropdown"><a href="#"><span>Arrivée</span> <i class="bi bi-chevron-right"></i></a>

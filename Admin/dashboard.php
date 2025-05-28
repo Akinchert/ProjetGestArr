@@ -5,6 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 require ('../Backend/traitements.php');
+//require ('../Backend/setting.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -481,6 +482,7 @@ require ('../Backend/traitements.php');
 
       </div>
     </section><!-- End Testimonials Section -->
+    
     <?php 
       include ('../Frontend/modal_detail.php');
       include ('../Frontend/modal_registre_service.php');
