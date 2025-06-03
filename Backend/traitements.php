@@ -28,8 +28,6 @@ $dmd = $pdo->query("SELECT COUNT(*) as nombre FROM registre where service= 'copi
 $nb7=$dmd->fetchColumn();
 
 
-
-require ('../Backend/sendMail.php');
 if(isset($_POST['submitdmd'])) {
     $numero_suivi = uniqid('DOSSIER-');
     $nom_demandeur = $_POST['nom_demandeur'];
@@ -132,7 +130,8 @@ if(isset($_POST['submitRe'])) {
     $count=1;
     $reponse = $pdo ->query("SELECT * FROM registre ORDER BY date_demande DESC");
 
-          
+    $countt=1;
+    $Reponse = $pdo ->query("SELECT * FROM reponse ORDER BY date_traitement DESC");   
 ?>
 
 

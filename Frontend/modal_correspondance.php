@@ -530,3 +530,48 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="ExtralargeModal4" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> <strong>Finaliser le traitement</strong> </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">       
+                        
+              <!-- Default Table -->
+              
+                    <table class="table">
+                        <thead class='table-primary'> 
+                        <tr>
+                            <th>Numero Enregistrement</th>
+                            <th>Demandeur</th>
+                            <th>Email</th>
+                            <th>Fichier</th>
+                            <th>Date</th>
+                            <th>Envoyer par email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php while ($r=$Reponse->fetch()){ ?>
+                            <tr> 
+                                <td><?= htmlspecialchars($r['numero_suivi']) ?></td>
+                                <td><?= htmlspecialchars($r['nom_demandeur']) ?></td>
+                                <td><?= htmlspecialchars($r['email']) ?></td>
+                                <td><?= htmlspecialchars($r['fichier_pdf']) ?></td>
+                                <td><?= ($r['date_traitement']) ?></td>
+                                <td><a class="btn btn-success btn-sm" href="../Backend/sendMail2.php?id=<?= $r['id'] ?>">Envoyer par email</a></td>
+                            </tr>
+                            <?php $countt++; } ?>
+                            </tbody>
+                    </table><!-- End Default Table Example -->
+              </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                      <!-- <button type="button" class="btn btn-primary text-dark"><a href="impression_arrivee.php">Imprimer</a></button> -->
+        </div>
+        </div>
+    </div>
+</div><!-- End Extra Large Modal-->

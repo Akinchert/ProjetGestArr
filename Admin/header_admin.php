@@ -14,7 +14,7 @@
           <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#ExtralargeModal">Demande</a></li>               
           <li class="dropdown"><a href="#"><span>Gestion</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="../Admin/generer_attestation.php?id=<?= $demande['id'] ?>" class="nav-link scrollto">Télécharger PDF</a></li>
+              <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#ExtralargeModal4">Finaliser le traitement</a></li>
               <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#ExtralargeModal2">Registre de service</a></li>
               <li><a href="../Admin/services.php">Services</a></li>
               <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#ExtralargeModal1">Reclamation</a></li>

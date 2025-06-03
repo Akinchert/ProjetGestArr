@@ -105,7 +105,11 @@ if ($id) {
     <div class="container mt-4"><br><br><br><br>
     <h3><strong>Finaliser le traitement</strong></h3>
     
-    <form action="traiter_upload.php" method="POST" enctype="multipart/form-data">
+    <form action="./traiter_upload.php" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label">Code de suivi</label>
+            <input type="text" name="numero_suivi" class="form-control" value="<?= htmlspecialchars($service['numero_suivi']) ?>" required>
+        </div>
         <div class="mb-3">
             <label class="form-label">Email</label>
             <input type="text" name="email" class="form-control" value="<?= htmlspecialchars($service['email']) ?>" required>

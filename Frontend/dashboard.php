@@ -87,7 +87,8 @@ require ('../Backend/traitements.php');
             arrondissement, à une superfie de 2 km2, d'une population de 33.820 habitants soit 18.405 de sexe feminin et 15.425 de sexe masculin. 
             Le nombre de quartier est de 29 et de ménages 8.282.</strong></h4>
 
-          <p>l'Arrondissement est animé par le Chef d'Arrondissement Monsieur Latif MOUBARACOU - le Secretaire administratif de l'Arrodissement et ses collaborateurs</p>
+          <p>l'Arrondissement est animée par le Chef d'Arrondissement Monsieur Latif MOUBARACOU et le personnel administratif: Le Secretaire administratif, Monsieur Faïçole AKADIRI - 
+          le Chef Division état civil, Keller SANDA et les collaborateurs du Secretaire</p>
         </header>
         
         <div class="row about-container">
