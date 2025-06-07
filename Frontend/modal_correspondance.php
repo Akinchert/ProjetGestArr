@@ -1,6 +1,6 @@
 <?php if(isset($info)){ echo'<script> alert(\''.$info.'\')</script>';  }  ?>
-    <?php if(isset($confirmation)){ echo'<script> alert(\''.$confirmation.'\')</script>';  } ?>
-    <?php if(isset($confirmationn)){ echo'<script> alert(\''.$confirmationn.'\')</script>';  }  ?>
+<?php if(isset($confirmation)){ echo'<script> alert(\''.$confirmation.'\')</script>';  } ?>
+    
 
 <div class="row">
     <div class="col-lg-12">
@@ -114,13 +114,13 @@
                                 <div class="col-md-3">
                                     <label for="validationDefault04" class="form-label">Date d'arrivée</label>
                                     <div class="input-group">
-                                        <input type="date" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" name="date_arrivee" required>
+                                        <input type="date" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" name="date" required>
                                     </div>
                                 </div>
                                 <div class="col-md-9">
                                     <label for="validationDefault04" class="form-label">Référence du courrier</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" name="reference_courrier_arrivee" required>
+                                        <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" name="reference" required>
                                     </div>
                                 </div>                                
                                 <div class="col-md-4">
@@ -137,7 +137,7 @@
                                 </div>           
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                                    <button type="sumit" class="btn btn-primary" name='submit'>Enregistrer</button>
+                                    <button type="submit" class="btn btn-primary" name='submitca'>Enregistrer</button>
                                 </div>
 
                             </form><!-- End General Form Elements -->
@@ -182,7 +182,7 @@
                                 </div>           
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                                    <button type="sumit" class="btn btn-primary" name='submit'>Enregistrer</button>
+                                    <button type="submit" class="btn btn-primary" name='submitcd'>Enregistrer</button>
                                 </div>
 
                             </form><!-- End General Form Elements -->
@@ -205,20 +205,20 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">             
-                            <form class="row g-6" action="" method="post"> <!-- General Form Elements -->
+                            <form class="row g-6" action="../Backend/traiter_dmd.php" method="post" enctype="multipart/form-data"> <!-- General Form Elements -->
                                 <div class="col-md-12">
                                     <label for="validationDefault04" class="form-label">Nom et Prénoms </label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" name="nom_demandeur" required>
                                     </div>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-5">
                                     <label for="validationDefault04" class="form-label">Email </label>
                                     <div class="input-group">
                                         <input type="email" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" name="email" required>
                                     </div>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-7">
                                     <label for="validationDefault04" class="form-label">Services</label>
                                     <select class="form-select" id="validationDefault04" name="service" >
                                         <option value=""selected></option>
@@ -227,10 +227,15 @@
                                         <?php endwhile ?>
                                     </select>
                                 </div>                         
-                                  
+                                  <div class="col-md-12">
+                                    <label for="validationDefault04" class="form-label">Fichier PDF (Veuillez joindre la copie)</label>
+                                    <div class="input-group">
+                                        <input type="file" name="fichier_pdf" accept="application/pdf" class="form-control" id="validationDefaultUsername" required>
+                                    </div>
+                                </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                                    <button type="sumit" class="btn btn-primary" name='submitdmd'>Enregistrer</button>
+                                    <button type="submit" class="btn btn-primary" name='submitdmd'>Enregistrer</button>
                                 </div>
 
                             </form><!-- End General Form Elements -->
@@ -562,7 +567,7 @@
                                 <td><?= htmlspecialchars($r['email']) ?></td>
                                 <td><?= htmlspecialchars($r['fichier_pdf']) ?></td>
                                 <td><?= ($r['date_traitement']) ?></td>
-                                <td><a class="btn btn-success btn-sm" href="../Backend/sendMail2.php?id=<?= $r['id'] ?>">Envoyer par email</a></td>
+                                <td><a class="btn btn-success btn-sm" href="../Backend/sendMail1.php?id=<?= $r['id'] ?>">Envoyer par email</a></td>
                             </tr>
                             <?php $countt++; } ?>
                             </tbody>

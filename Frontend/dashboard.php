@@ -5,6 +5,8 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 require ('../Backend/traitements.php');
+//require ('../Backend/traiter_dmd.php');
+if(isset($confirmation)){ echo'<script> alert(\''.$confirmation.'\')</script>';  }
 ?>
   
 <!DOCTYPE html>

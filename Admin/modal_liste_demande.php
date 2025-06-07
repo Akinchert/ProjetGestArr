@@ -23,6 +23,8 @@
                           <th>Email</th>
                           <th>Demande</th>
                           <th>Date</th>
+                          <th>Fichier</th>
+                          <th>Action</th>
                           <th>Status</th>
                   </tr>
                 </thead>
@@ -35,6 +37,18 @@
                                 <td><?= htmlspecialchars($req['email']) ?></td>
                                 <td><?= htmlspecialchars($req['service']) ?></td>
                                 <td><?= htmlspecialchars($req['date_demande'])?></td>
+                                <td>
+                                    <?php if ($req['fichier_pdf']): ?>
+                                    <a href="../f_dmd/<?= htmlspecialchars($req['fichier_pdf']) ?>" target="_blank">Voir</a>
+                                    <?php else: ?>
+                                    Aucun fichier
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                  <?php if ($req['fichier_pdf']): ?>
+                                  <a href="../f_dmd/<?= htmlspecialchars($req['fichier_pdf']) ?>" download>Télécharger</a>
+                                  <?php endif; ?>
+                                </td>
                                 <td>
                                 <form method="post" action="update_statut.php">
                                 <input type="hidden" name="id" value="<?= $req['id'] ?>">
@@ -116,3 +130,98 @@
                   </div>
                 </div>
               </div><!-- End Extra Large Modal-->
+
+
+
+              <div class="modal fade" id="ExtralargeModal5" tabindex="-1" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable ">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title"> <strong>Liste des courriers arrivée</strong> </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">        
+                  
+                    <?php
+                        $count=1;
+                        $donnees= new PDO('mysql:host=localhost;dbname=gestion_services;charset=utf8', 'root', '');
+                        $reponse = $donnees ->query("SELECT * FROM carrivee ORDER BY date DESC");
+                    ?>
+              <!-- Default Table -->
+              
+              <table class="table">
+                <thead class='table-primary'> 
+                  <tr>
+                    <th>Date</th>
+                    <th>Référence</th>
+                    <th>Expediteur</th>
+                    <th>Objet</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 <?php while ($r=$reponse->fetch()){ ?>
+                            <tr> 
+                                <td><?= ($r['date']) ?></td>
+                                <td><?= htmlspecialchars($r['reference']) ?></td>
+                                <td><?= nl2br(htmlspecialchars($r['expediteur'])) ?></td>
+                                <td><?= nl2br(htmlspecialchars($r['objet'])) ?></td>                                
+                            </tr>
+                    <?php $count++; } ?>
+                </tbody>
+              </table><!-- End Default Table Example -->
+
+              </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                      <!-- <button type="button" class="btn btn-primary text-dark"><a href="impression_arrivee.php">Imprimer</a></button> -->
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Extra Large Modal-->
+
+
+
+              <div class="modal fade" id="ExtralargeModal6" tabindex="-1" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable ">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title"> <strong>Liste des courriers départ</strong> </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">        
+                  
+                    <?php
+                        $count=1;
+                        $donnees= new PDO('mysql:host=localhost;dbname=gestion_services;charset=utf8', 'root', '');
+                        $reponse = $donnees ->query("SELECT * FROM cdepart ORDER BY date_envoie DESC");
+                    ?>
+              <!-- Default Table -->
+              
+              <table class="table">
+                <thead class='table-primary'> 
+                  <tr>
+                    <th>Date</th>
+                    <th>Destinataire</th>
+                    <th>Objet</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 <?php while ($r=$reponse->fetch()){ ?>
+                            <tr> 
+                                <td><?= ($r['date_envoie']) ?></td>
+                                <td><?= nl2br(htmlspecialchars($r['destinataire'])) ?></td>
+                                <td><?= nl2br(htmlspecialchars($r['objet'])) ?></td>                                
+                            </tr>
+                    <?php $count++; } ?>
+                </tbody>
+              </table><!-- End Default Table Example -->
+
+              </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                      <!-- <button type="button" class="btn btn-primary text-dark"><a href="impression_arrivee.php">Imprimer</a></button> -->
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Extra Large Modal-->
+

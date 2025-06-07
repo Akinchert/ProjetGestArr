@@ -25,13 +25,13 @@
                   <li class="dropdown"><a href="#"><span>Arrivée</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                       <li><a href="#" data-bs-toggle="modal" data-bs-target="#arrivee1">Enregistrer</a></li>
-                      <li><a href="#">Afficher</a></li>
+                      <li><a href="#" data-bs-toggle="modal" data-bs-target="#ExtralargeModal5">Afficher</a></li>
                     </ul>
                   </li>
                   <li class="dropdown"><a href="#"><span>Départ</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                       <li><a href="#" data-bs-toggle="modal" data-bs-target="#depart1">Enregistrer</a></li>
-                      <li><a href="#">Afficher</a></li>
+                      <li><a href="#" data-bs-toggle="modal" data-bs-target="#ExtralargeModal6">Afficher</a></li>
                     </ul>
                   </li>
                 </ul>
