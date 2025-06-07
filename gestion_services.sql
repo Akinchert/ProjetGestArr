@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 27 mai 2025 à 20:02
+-- Généré le : sam. 07 juin 2025 à 23:21
 -- Version du serveur : 10.4.20-MariaDB
 -- Version de PHP : 8.0.8
 
@@ -24,6 +24,48 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `carrivee`
+--
+
+CREATE TABLE `carrivee` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `reference` varchar(50) NOT NULL,
+  `expediteur` varchar(50) NOT NULL,
+  `objet` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `carrivee`
+--
+
+INSERT INTO `carrivee` (`id`, `date`, `reference`, `expediteur`, `objet`) VALUES
+(1, '2025-06-04', 'Ref: N° 003/25/CRB/CL/PN', 'CROIX-ROUGE', 'Damande d\'audience'),
+(2, '2025-06-04', 'Ref: N° 003/25/CRB/CL/PN', 'CROIX-ROUGE', 'Damande d\'audience');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `cdepart`
+--
+
+CREATE TABLE `cdepart` (
+  `id` int(11) NOT NULL,
+  `date_envoie` date NOT NULL,
+  `destinataire` varchar(50) NOT NULL,
+  `objet` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `cdepart`
+--
+
+INSERT INTO `cdepart` (`id`, `date_envoie`, `destinataire`, `objet`) VALUES
+(1, '2025-06-04', 'CROIX-ROUGE', 'Reponse au courrier Ref:N°003/05/25/CRB/CL/PN/');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `demandes`
 --
 
@@ -34,6 +76,7 @@ CREATE TABLE `demandes` (
   `email` varchar(100) NOT NULL,
   `service` varchar(100) NOT NULL,
   `date_demande` date NOT NULL,
+  `fichier_pdf` varchar(255) DEFAULT NULL,
   `statut` enum('En attente','En cours','Traitée') DEFAULT 'En attente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -41,43 +84,55 @@ CREATE TABLE `demandes` (
 -- Déchargement des données de la table `demandes`
 --
 
-INSERT INTO `demandes` (`id`, `numero_suivi`, `nom_demandeur`, `email`, `service`, `date_demande`, `statut`) VALUES
-(1, NULL, 'AKADIRI Faicole', '', 'Copie Integrale', '2025-05-12', 'En cours'),
-(2, 'DOSSIER-682201b08fcfc', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-12', 'Traitée'),
-(3, 'DOSSIER-682209bf96c48', 'Lamidi', 'akin@gmail.com', 'légalisation', '2025-05-12', 'En cours'),
-(4, 'DOSSIER-6824a99784738', 'Lamidi', 'k@k.fr', 'Collecte des déchets', '2025-05-14', 'En attente'),
-(5, 'DOSSIER-6824c586a9d24', 'Lamidi', 'k@k.fr', 'Collecte des déchets', '2025-05-14', 'En attente'),
-(6, 'DOSSIER-6824c97ef1b18', 'Lamidi', 'k@k.fr', 'Collecte des déchets', '2025-05-14', 'En attente'),
-(7, 'DOSSIER-6824cce23de9f', 'AKANY Liliane', 'k@k.fr', 'légalisation', '2025-05-14', 'En attente'),
-(8, 'DOSSIER-6824cd01ae215', 'AKANY Liliane', 'k@k.fr', 'légalisation', '2025-05-14', 'En attente'),
-(9, 'DOSSIER-6824ce7931535', 'AKANY Liliane', 'k@k.fr', 'légalisation', '2025-05-14', 'En attente'),
-(10, 'DOSSIER-6825f20f92aa2', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-15', 'En attente'),
-(11, 'DOSSIER-6825f30131ad7', 'olaitan DANGBE', 'S@GMAIL.COM', 'légalisation', '2025-05-15', 'En attente'),
-(12, 'DOSSIER-6825f483407d3', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-15', 'En attente'),
-(13, 'DOSSIER-6825f6d517d80', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-15', 'En attente'),
-(14, 'DOSSIER-6825f77cb4ced', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-15', 'En cours'),
-(15, 'DOSSIER-6825f869eeaf5', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'légalisation', '2025-05-15', 'En attente'),
-(16, 'DOSSIER-6825f8796ebe1', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'légalisation', '2025-05-15', 'En attente'),
-(17, 'DOSSIER-6825fa92e602e', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'légalisation', '2025-05-15', 'En attente'),
-(18, 'DOSSIER-6825fd93d5de5', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'légalisation', '2025-05-15', 'En attente'),
-(19, 'DOSSIER-6826020460d0f', 'AKADIRI Faicole', 'k@k.fr', 'Service de nettoyage', '2025-05-15', 'En attente'),
-(20, 'DOSSIER-6826023916e4f', 'AKADIRI Faicole', 'k@k.fr', 'Service de nettoyage', '2025-05-15', 'En attente'),
-(21, 'DOSSIER-68261545c4bcb', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', 'En attente'),
-(22, 'DOSSIER-6826161059f0c', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', 'En attente'),
-(23, 'DOSSIER-6826163c990ef', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', 'En attente'),
-(24, 'DOSSIER-68261853b6c8f', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', 'En attente'),
-(25, 'DOSSIER-682618afe183a', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', 'En attente'),
-(26, 'DOSSIER-6830c6dae6de5', 'lola', 'akinchert@gmail.com', 'légalisation', '2025-05-23', 'Traitée'),
-(27, 'DOSSIER-6835b8779352d', 'AKANY Liliane', 'akinchert@yahoo.fr', 'Autorisation parentale PASSEPORT', '2025-05-27', 'En attente'),
-(28, 'DOSSIER-6835bbb81a408', 'olaitan DANGBE', 'akinchert619@gmail.com', 'Autorisation parentale VISA', '2025-05-27', 'En attente'),
-(29, 'DOSSIER-6835cbad7d905', 'olaitan DANGBE', 'akinchert619@gmail.com', 'Autorisation parentale VISA', '2025-05-27', 'En attente'),
-(30, 'DOSSIER-6835cbd334bb1', 'AKANY Liliane', 'akinchert619@gmail.com', 'Procuration', '2025-05-27', 'En attente'),
-(31, 'DOSSIER-6835cf59c745f', 'AKANY Liliane', 'akinchert619@gmail.com', 'Procuration', '2025-05-27', 'En attente'),
-(32, 'DOSSIER-6835d06e53f11', 'AKANY Liliane', 'akinchert619@gmail.com', 'Procuration', '2025-05-27', 'En attente'),
-(33, 'DOSSIER-6835d0e7f24b1', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-27', 'En attente'),
-(34, 'DOSSIER-6835d338f0d3f', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'Procuration', '2025-05-27', 'En attente'),
-(35, 'DOSSIER-6835d55265d48', 'AKANY Liliane', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-27', 'En attente'),
-(36, 'DOSSIER-6835e00bf3594', 'AKANY Liliane', 'akinchert619@gmail.com', 'Copie Integrale', '2025-05-27', 'En attente');
+INSERT INTO `demandes` (`id`, `numero_suivi`, `nom_demandeur`, `email`, `service`, `date_demande`, `fichier_pdf`, `statut`) VALUES
+(1, NULL, 'AKADIRI Faicole', '', 'Copie Integrale', '2025-05-12', '', 'En cours'),
+(2, 'DOSSIER-682201b08fcfc', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-12', '', 'Traitée'),
+(3, 'DOSSIER-682209bf96c48', 'Lamidi', 'akin@gmail.com', 'légalisation', '2025-05-12', '', 'En cours'),
+(4, 'DOSSIER-6824a99784738', 'Lamidi', 'k@k.fr', 'Collecte des déchets', '2025-05-14', '', 'En attente'),
+(5, 'DOSSIER-6824c586a9d24', 'Lamidi', 'k@k.fr', 'Collecte des déchets', '2025-05-14', '', 'En attente'),
+(6, 'DOSSIER-6824c97ef1b18', 'Lamidi', 'k@k.fr', 'Collecte des déchets', '2025-05-14', '', 'En attente'),
+(7, 'DOSSIER-6824cce23de9f', 'AKANY Liliane', 'k@k.fr', 'légalisation', '2025-05-14', '', 'En attente'),
+(8, 'DOSSIER-6824cd01ae215', 'AKANY Liliane', 'k@k.fr', 'légalisation', '2025-05-14', '', 'En attente'),
+(9, 'DOSSIER-6824ce7931535', 'AKANY Liliane', 'k@k.fr', 'légalisation', '2025-05-14', '', 'En attente'),
+(10, 'DOSSIER-6825f20f92aa2', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-15', '', 'En attente'),
+(11, 'DOSSIER-6825f30131ad7', 'olaitan DANGBE', 'S@GMAIL.COM', 'légalisation', '2025-05-15', '', 'En attente'),
+(12, 'DOSSIER-6825f483407d3', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-15', '', 'En attente'),
+(13, 'DOSSIER-6825f6d517d80', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-15', '', 'En attente'),
+(14, 'DOSSIER-6825f77cb4ced', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-15', '', 'En cours'),
+(15, 'DOSSIER-6825f869eeaf5', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'légalisation', '2025-05-15', '', 'En attente'),
+(16, 'DOSSIER-6825f8796ebe1', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'légalisation', '2025-05-15', '', 'En attente'),
+(17, 'DOSSIER-6825fa92e602e', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'légalisation', '2025-05-15', '', 'En attente'),
+(18, 'DOSSIER-6825fd93d5de5', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'légalisation', '2025-05-15', '', 'En attente'),
+(19, 'DOSSIER-6826020460d0f', 'AKADIRI Faicole', 'k@k.fr', 'Service de nettoyage', '2025-05-15', '', 'En attente'),
+(20, 'DOSSIER-6826023916e4f', 'AKADIRI Faicole', 'k@k.fr', 'Service de nettoyage', '2025-05-15', '', 'En attente'),
+(21, 'DOSSIER-68261545c4bcb', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', '', 'En attente'),
+(22, 'DOSSIER-6826161059f0c', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', '', 'En attente'),
+(23, 'DOSSIER-6826163c990ef', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', '', 'En attente'),
+(24, 'DOSSIER-68261853b6c8f', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', '', 'En attente'),
+(25, 'DOSSIER-682618afe183a', 'AKANY Liliane', 'akin@gmail.com', 'Collecte des déchets', '2025-05-15', '', 'En attente'),
+(26, 'DOSSIER-6830c6dae6de5', 'lola', 'akinchert@gmail.com', 'légalisation', '2025-05-23', '', 'Traitée'),
+(27, 'DOSSIER-6835b8779352d', 'AKANY Liliane', 'akinchert@yahoo.fr', 'Autorisation parentale PASSEPORT', '2025-05-27', '', 'Traitée'),
+(28, 'DOSSIER-6835bbb81a408', 'olaitan DANGBE', 'akinchert619@gmail.com', 'Autorisation parentale VISA', '2025-05-27', '', 'En attente'),
+(29, 'DOSSIER-6835cbad7d905', 'olaitan DANGBE', 'akinchert619@gmail.com', 'Autorisation parentale VISA', '2025-05-27', '', 'En attente'),
+(30, 'DOSSIER-6835cbd334bb1', 'AKANY Liliane', 'akinchert619@gmail.com', 'Procuration', '2025-05-27', '', 'En attente'),
+(31, 'DOSSIER-6835cf59c745f', 'AKANY Liliane', 'akinchert619@gmail.com', 'Procuration', '2025-05-27', '', 'En attente'),
+(32, 'DOSSIER-6835d06e53f11', 'AKANY Liliane', 'akinchert619@gmail.com', 'Procuration', '2025-05-27', '', 'En attente'),
+(33, 'DOSSIER-6835d0e7f24b1', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-27', '', 'En attente'),
+(34, 'DOSSIER-6835d338f0d3f', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'Procuration', '2025-05-27', '', 'En attente'),
+(35, 'DOSSIER-6835d55265d48', 'AKANY Liliane', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-05-27', '', 'En attente'),
+(36, 'DOSSIER-6835e00bf3594', 'AKANY Liliane', 'akinchert619@gmail.com', 'Copie Integrale', '2025-05-27', '', 'En attente'),
+(37, 'DOSSIER-68446f69af750', 'ANNANI Hikmanth', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-07', '', 'En attente'),
+(38, 'DOSSIER-6844704657e6d', 'ANNANI Hikmanth', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-07', '', 'En attente'),
+(39, 'DOSSIER-684477e971f26', 'AKADIRI Faicole', 'akinchert619@gmail.com', 'Copie simple', '2025-06-07', '', 'En attente'),
+(40, 'DOSSIER-6844780032d7b', 'AKADIRI Faicole', 'akinchert619@gmail.com', 'Copie simple', '2025-06-07', '', 'En attente'),
+(41, 'DOSSIER-6844785788fe2', 'ANANNI Halali', 'akinchert619@gmail.com', 'Copie simple', '2025-06-07', '', 'En attente'),
+(42, '10H/68448eb395940', 'Houdath BADAROU', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-07', NULL, 'En attente'),
+(43, '10H/68448efd5f219', 'Houdath BADAROU', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-07', '68448efd5f23d_Facture_EM01151777-7_20250425154749.pdf', 'En attente'),
+(44, '10H/68449ffb166e9', 'MARTIS Okanlawan', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-07', '68449ffb16708_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(45, '10H/6844a9b268203', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844a9b26826d_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(46, '10H/6844aacb2df97', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844aacb2dfc4_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(47, '10H/6844aaf26c0c7', 'Houdath BADAROU', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844aaf26c0ec_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(48, '10H/6844abbe09f93', 'AKANY Liliane', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844abbe09fb7_Facture_EM01151777-7_20250425162023.pdf', 'En attente');
 
 -- --------------------------------------------------------
 
@@ -122,20 +177,56 @@ CREATE TABLE `registre` (
   `id` int(11) NOT NULL,
   `numero_suivi` varchar(50) NOT NULL,
   `nom_demandeur` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `telephone` varchar(100) NOT NULL,
   `entite` varchar(100) NOT NULL,
   `service` varchar(100) NOT NULL,
   `date_demande` date NOT NULL,
-  `observations` varchar(100) NOT NULL
+  `observations` varchar(100) NOT NULL,
+  `fichier_pdf` longblob DEFAULT NULL,
+  `date_reponse` date DEFAULT NULL,
+  `statut` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `registre`
 --
 
-INSERT INTO `registre` (`id`, `numero_suivi`, `nom_demandeur`, `telephone`, `entite`, `service`, `date_demande`, `observations`) VALUES
-(1, 'REG.1ER.ARR/PN-6835f21c02f54', 'AKADIRI Faicole', '0197458474', 'halil', 'Mariage', '2025-05-27', 'Dépôt du droit de mariage et les pièces. A programmer'),
-(2, 'REG.1ER.ARR/PN-6835fa788b769', 'AKANY Liliane', '0197458474', 'halil', 'Paternite', '2025-05-27', 'aucun');
+INSERT INTO `registre` (`id`, `numero_suivi`, `nom_demandeur`, `email`, `telephone`, `entite`, `service`, `date_demande`, `observations`, `fichier_pdf`, `date_reponse`, `statut`) VALUES
+(1, 'REG.1ER.ARR/PN-6835f21c02f54', 'AKADIRI Faicole', '', '0197458474', 'halil', 'Mariage', '2025-05-27', 'Dépôt du droit de mariage et les pièces. A programmer', NULL, NULL, NULL),
+(2, 'REG.1ER.ARR/PN-6835fa788b769', 'AKANY Liliane', '', '0197458474', 'halil', 'Paternite', '2025-05-27', 'aucun', NULL, NULL, NULL),
+(3, 'REG.1ER.ARR/PN-6836ebc45a94e', 'Ololade AKANNI', 'akinchert619@gmail.com', '0197458474', 'halil', 'copieI', '2025-05-28', 'Neant', NULL, NULL, NULL),
+(4, 'REG.1ER.ARR/PN-6837485b8d3a6', 'Ololade AKANNI', 'akinchert619@gmail.com', '0197458474', 'halil', 'copieI', '2025-05-28', 'Neant', NULL, NULL, NULL),
+(5, '', '', '', '', '', '', '0000-00-00', '', 0x7265706f6e73655f313734383539323635312e706466, NULL, 'Répondu'),
+(6, 'REG.1ER.ARR/PN-68397a1f99645', 'ALAO Brice', 'admin@gmail.com', '96997577', 'halil', 'Naissance', '2025-05-30', 'Aucun', NULL, NULL, NULL),
+(7, 'REG.1ER.ARR/PN-683f1ec3534b6', 'ASSOGBA  Jean', 'akinchert619@gmail.com', '0197458474', 'halil', 'souche', '2025-06-03', 'Neant', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reponse`
+--
+
+CREATE TABLE `reponse` (
+  `id` int(11) NOT NULL,
+  `numero_suivi` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `nom_demandeur` varchar(100) NOT NULL,
+  `fichier_pdf` longblob NOT NULL,
+  `date_traitement` date DEFAULT NULL,
+  `statut` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `reponse`
+--
+
+INSERT INTO `reponse` (`id`, `numero_suivi`, `email`, `nom_demandeur`, `fichier_pdf`, `date_traitement`, `statut`) VALUES
+(1, 'REG.1ER.ARR/PN-6836ebc45a94e', 'akinchert619@gmail.com', 'Ololade AKANNI', 0x313734383539353734335f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, NULL, 'en attente'),
+(2, 'REG.1ER.ARR/PN-6837485b8d3a6', 'akinchert619@gmail.com', 'Ololade AKANNI', 0x313734383539363939345f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, '0000-00-00', 'Traité'),
+(3, 'REG.1ER.ARR/PN-68397a1f99645', 'admin@gmail.com', 'ALAO Brice', 0x313734383539373434345f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, '2025-05-30', 'Traité'),
+(4, 'REG.1ER.ARR/PN-6836ebc45a94e', 'akinchert619@gmail.com', 'Ololade AKANNI', 0x313734383730363738325f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, '2025-05-31', 'Traité'),
+(5, 'REG.1ER.ARR/PN-683f1ec3534b6', 'akinchert619@gmail.com', 'ASSOGBA  Jean', 0x313734383936373232335f466163747572655f454d30313135313737372d375f32303235303432353135343733322e706466, '2025-06-03', 'Traité');
 
 -- --------------------------------------------------------
 
@@ -147,6 +238,7 @@ CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `Type` enum('En ligne','Presentiel') NOT NULL DEFAULT 'Presentiel',
   `prix` decimal(10,2) DEFAULT 0.00,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -155,14 +247,14 @@ CREATE TABLE `services` (
 -- Déchargement des données de la table `services`
 --
 
-INSERT INTO `services` (`id`, `nom`, `description`, `prix`, `created_at`) VALUES
-(6, 'Copie Integrale', 'Timbre 1000 - Copie de la souche', '2200.00', '2025-05-08 11:15:44'),
-(7, 'Autorisation parentale VISA', 'Copie du CIP des parents et du mineur', '1300.00', '2025-05-26 09:50:51'),
-(8, 'Autorisation parentale PASSEPORT', 'Copie du CIP des parents et du mineur', '1300.00', '2025-05-26 10:13:58'),
-(9, 'Légalisation', 'Timbre de 500 et la copie originale', '500.00', '2025-05-26 11:28:57'),
-(10, 'Copie simple', 'Copie de la souche', '1200.00', '2025-05-26 11:31:39'),
-(11, 'Procuration', 'Copie de CIP des deux parties', '1300.00', '2025-05-26 11:40:34'),
-(12, 'Certificat de décès', 'Fiche de renseignement - Cip du défunt et du déclarant', '2300.00', '2025-05-26 11:42:28');
+INSERT INTO `services` (`id`, `nom`, `description`, `Type`, `prix`, `created_at`) VALUES
+(6, 'Copie Integrale', 'Timbre 1000 - Copie de la souche', 'En ligne', '2200.00', '2025-05-08 11:15:44'),
+(7, 'Autorisation parentale VISA', 'Copie du CIP des parents et du mineur', 'Presentiel', '1300.00', '2025-05-26 09:50:51'),
+(8, 'Autorisation parentale PASSEPORT', 'Copie du CIP des parents et du mineur', 'Presentiel', '1300.00', '2025-05-26 10:13:58'),
+(9, 'Légalisation', 'Timbre de 500 et la copie originale', 'Presentiel', '500.00', '2025-05-26 11:28:57'),
+(10, 'Copie simple', 'Copie de la souche', 'En ligne', '1200.00', '2025-05-26 11:31:39'),
+(11, 'Procuration', 'Copie de CIP des deux parties', 'Presentiel', '1300.00', '2025-05-26 11:40:34'),
+(12, 'Certificat de décès', 'Fiche de renseignement - Cip du défunt et du déclarant', 'Presentiel', '2300.00', '2025-05-26 11:42:28');
 
 -- --------------------------------------------------------
 
@@ -286,6 +378,18 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`
 --
 
 --
+-- Index pour la table `carrivee`
+--
+ALTER TABLE `carrivee`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `cdepart`
+--
+ALTER TABLE `cdepart`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `demandes`
 --
 ALTER TABLE `demandes`
@@ -302,6 +406,12 @@ ALTER TABLE `reclamations`
 -- Index pour la table `registre`
 --
 ALTER TABLE `registre`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `reponse`
+--
+ALTER TABLE `reponse`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -329,10 +439,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `carrivee`
+--
+ALTER TABLE `carrivee`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `cdepart`
+--
+ALTER TABLE `cdepart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `demandes`
 --
 ALTER TABLE `demandes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT pour la table `reclamations`
@@ -344,7 +466,13 @@ ALTER TABLE `reclamations`
 -- AUTO_INCREMENT pour la table `registre`
 --
 ALTER TABLE `registre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT pour la table `reponse`
+--
+ALTER TABLE `reponse`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `services`
