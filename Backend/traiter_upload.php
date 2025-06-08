@@ -1,4 +1,8 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 include '..//Backend/connexion.php'; // connexion à MySQL
 
 if(isset($_POST['submit'])) {

@@ -4,9 +4,9 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: ./Frontend/login.php');
     exit();
 }
+require('..//Backend/expiration_session.php');
 require ('../Backend/traitements.php');
 //require ('../Backend/traiter_dmd.php');
-if(isset($confirmation)){ echo'<script> alert(\''.$confirmation.'\')</script>';  }
 ?>
   
 <!DOCTYPE html>
@@ -566,9 +566,7 @@ if(isset($confirmation)){ echo'<script> alert(\''.$confirmation.'\')</script>'; 
 
       </div>
     </section><!-- End Testimonials Section -->
-    <?php if(isset($info)){ echo'<script> alert(\''.$info.'\')</script>';  }  ?>
-    <?php if(isset($confirmation)){ echo'<script> alert(\''.$confirmation.'\')</script>';  } ?>
-    <?php if(isset($confirmationn)){ echo'<script> alert(\''.$confirmationn.'\')</script>';  }  ?>
+    
     <?php     
       include ('../Frontend/modal_detail.php');
       //include ('../Frontend/modal_registre_service.php');

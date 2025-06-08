@@ -1,9 +1,12 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     header('Location: ./Frontend/login.php');
     exit();
 }
+
+require('..//Backend/expiration_session.php');
 require ('../Backend/traitements.php');
 //require ('../Backend/setting.php');
 ?>

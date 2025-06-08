@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $erreur = "Identifiants incorrects.";
     }
-
+$_SESSION['last_activity'] = time(); // Initialise le timer
 }
 ?>
 

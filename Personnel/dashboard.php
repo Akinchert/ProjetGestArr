@@ -4,6 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: ./Frontend/login.php');
     exit();
 }
+require('..//Backend/expiration_session.php');
 require ('..//Backend/requettes.php');
 require ('..//Backend/traitements.php');
 ?>

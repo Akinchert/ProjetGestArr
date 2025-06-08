@@ -1,4 +1,11 @@
 <?php
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// le reste de votre code...
+
 require ('..//Backend/connexion.php'); 
 
 $servicenom = $pdo->query("SELECT nom  FROM services where Type= 'En ligne'");
