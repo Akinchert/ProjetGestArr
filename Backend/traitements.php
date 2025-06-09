@@ -34,27 +34,6 @@ $nb6=$dmd->fetchColumn();
 $dmd = $pdo->query("SELECT COUNT(*) as nombre FROM registre where service= 'copieI'");
 $nb7=$dmd->fetchColumn();
 
-// if(isset($_POST['submitdmd'])) {
-//     $numero_suivi = uniqid('DOSSIER-');
-//     $nom_demandeur = $_POST['nom_demandeur'];
-//     $email = $_POST['email'];
-//     $service = $_POST['service'];
-//     $date_demande = date('Y-m-d');
-//     $statut = 'En attente';
-
-//     $stmt = $pdo->prepare("INSERT INTO demandes (numero_suivi, nom_demandeur, email, service, date_demande, statut) VALUES (?, ?, ?, ?, ?, ?)");
-//     $stmt->execute (array($numero_suivi, $nom_demandeur, $email, $service, $date_demande, $statut));
-   
-
-//     // sendCustomMail($email, $nom_demandeur, "Confirmation de votre demande", "
-//     // Bonjour $nom_demandeur,<br><br>
-//     // Votre demande \"$service\" a bien été enregistrée.<br>
-//     // Code de suivi : <b>$numero_suivi</b>.<br><br>
-//     // Merci pour votre confiance.<br>
-//     // 1er Arrondissement de Porto-Novo");
-//     // $confirmation = "Votre demande a été soumise. Numéro de suivi :$numero_suivi consulter également votre compte $email";
-  
-// }
 
 $info = '';
 if(isset($_POST['submitsv'])) {

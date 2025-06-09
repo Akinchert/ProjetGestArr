@@ -10,14 +10,13 @@ use PHPMailer\PHPMailer\Exception;
 require '..//vendor/autoload.php';
 
 if(isset($_POST['submitdmd'])) {
-    $numero_suivi = uniqid('10H/');
+    $id_unique = uniqid(); // ex: 665f49dcb12a6
+    $numero_suivi = "10H/$id_unique/MPN/ARR1/SE/SAA/divEC";
     $nom_demandeur = $_POST['nom_demandeur'];
     $email = $_POST['email'];
     $service = $_POST['service'];
     $date_demande = date('Y-m-d');
     $statut = 'En attente';
-    $T='/SE/SAA1/CdEC/Reg.1erArr ';
-    $timbre = '$numero_suivi, $T';
 
     if (isset($_FILES['fichier_pdf']) && $_FILES['fichier_pdf']['error'] === UPLOAD_ERR_OK) {
     $fichier_nom = uniqid() . "_" . basename($_FILES['fichier_pdf']['name']);
@@ -40,12 +39,7 @@ if(isset($_POST['submitdmd'])) {
             $stmt = $pdo->prepare("INSERT INTO demandes (numero_suivi, nom_demandeur, email, service, date_demande, fichier_pdf, statut) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute (array($numero_suivi, $nom_demandeur, $email, $service, $date_demande, $fichier_nom, $statut));
            
-            // $confirmation = "$email, $nom_demandeur, 'Confirmation de votre demande', '
-            // Bonjour $nom_demandeur,<br><br>
-            // Votre demande \"$service\" a bien été enregistrée.<br>
-            // Code de suivi : <b>$numero_suivi</b>.<br><br>
-            // Merci pour votre confiance.<br>
-            // 1er Arrondissement de Porto-Novo";   
+              
         }       
     
             //Email de l'administrateur
@@ -97,9 +91,8 @@ if(isset($_POST['submitdmd'])) {
             echo "Erreur envoi email : " . $mail->ErrorInfo;
             header('Location: ../Frontend/dashboard.php');
             exit();
-            }    
-            
-            header('Location: ../Frontend/dashboard.php');
+            }
+            header('Location: ../Frontend/dashboard.php?suivi=$numero_suivi');
             exit();
 }
 

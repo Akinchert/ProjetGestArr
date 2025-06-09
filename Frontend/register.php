@@ -2,35 +2,34 @@
   session_start();
   require('../Backend/connexion.php');
 
-  if (isset($_POST['send'])){
-
-  if (!empty($_POST['username']) AND  !empty($_POST['email']) AND !empty($_POST['password']) ){
+  if (isset($_POST['send'])){  
     // récupérer le username d'utilisateur et supprimer les antislashes ajoutés par le formulaire
     $username = stripslashes($_POST['username']);
-    // $username = mysqli_real_escape_string($conn, $username); 
     // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
     $email = stripslashes($_POST['email']);
-    // $email = mysqli_real_escape_string($conn, $email);
     // récupérer le mot de passe et supprimer les antislashes ajoutés par le formulaire
-    // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-      $password =password_hash($_POST['password'],PASSWORD_DEFAULT);
-    // $password = mysqli_real_escape_string($conn, $password);
+    $password =password_hash($_POST['password'],PASSWORD_DEFAULT);
     //requéte SQL + mot de passe crypté
-     
+
+    // Vérification dans la base
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? OR username = ? ");
+    $stmt->execute([$email, $username]);
+
+        if ($stmt->rowCount() > 0) {
+        $res= "⚠️ Un compte existe déjà avec ces informations.";
+         }
+     else { 
       $query = $pdo->prepare("INSERT into users (username, email, password) VALUES (?,?,?)");
       $query->execute([$username,$email,$password]);
 
-      $recup_user = $pdo->prepare("SELECT username, email FROM users WHERE username=? AND email = ?");
-      $recup_user->execute([$username,$email]);
-      $recup = $recup_user->fetch();
-       $_SESSION['auth'] = true;
-      $_SESSION['username'] = $recup['username'];
-      $_SESSION['email'] = $recup['email'];
+      // $recup_user = $pdo->prepare("SELECT username, email FROM users WHERE username=? AND email = ?");
+      // $recup_user->execute([$username,$email]);
+      // $recup = $recup_user->fetch();
+      //  $_SESSION['auth'] = true;
+      // $_SESSION['username'] = $recup['username'];
+      // $_SESSION['email'] = $recup['email'];
      
       header('Location:../Frontend/login.php');
-     
-    }else{
-      $res="Veuillez completer tous les champs";
     }
   } 
   ?>
@@ -109,20 +108,20 @@
                   <div class="col-12">
                       <label for="yourusername" class="form-label">username d'utilisateur</label>
                       <div class="input-group has-validation">
-                        <input type="text" name="username" class="form-control" id="yourusername" >
+                        <input type="text" name="username" class="form-control" id="yourusername" required>
                         <div class="invalid-feedback">Veuillez choisir le username d'utilisateur.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Ton mail</label>
-                      <input type="email" name="email" class="form-control" id="yourEmail" >
+                      <input type="email" name="email" class="form-control" id="yourEmail" required>
                       <div class="invalid-feedback">Veuillez entrer un adresse mail validé!</div>
                     </div>
                     
                    <div class="col-12">
                       <label for="yourPassword" class="form-label">Mot de passe</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" >
+                      <input type="password" name="password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Veuillez entrer votre mot depasse!</div>
                     </div>
 

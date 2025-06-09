@@ -2,6 +2,19 @@
 session_start();
 require '../Backend/connexion.php';
 $message = '';
+
+// Supprimer les anciennes tentatives (> 30 min)
+$pdo->prepare("DELETE FROM tentatives_connexion WHERE date_tentative < NOW() - INTERVAL 30 MINUTE")->execute();
+
+// Compter les échecs récents de cette IP
+$nb_echecs = $pdo->prepare("SELECT COUNT(*) FROM tentatives_connexion WHERE ip_address = ? AND reussie = 0");
+$nb_echecs->execute([$ip]);
+$echecs = $nb_echecs->fetchColumn();
+
+if ($echecs >= 4) {
+    die("🚫 Trop de tentatives échouées. Réessayez dans 30 minutes.");
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = htmlspecialchars($_POST['username']);
     $password = $_POST['password'];
@@ -25,6 +38,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $erreur = "Identifiants incorrects.";
     }
 $_SESSION['last_activity'] = time(); // Initialise le timer
+
+$ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';  // Exemple d'IP par défaut
+$login_reussi = false; // ou null selon votre logique
+
+// ... après password_verify(...)
+$stmt = $pdo->prepare("INSERT INTO tentatives_connexion (ip_address, reussie) VALUES (?, ?)");
+$stmt->execute([$ip, $login_reussi ? 1 : 0]);
 }
 ?>
 

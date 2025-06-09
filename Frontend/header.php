@@ -20,8 +20,12 @@
               <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#largeModalrcm">Réclamation</a></li>
             </ul>
           </li>          
-          <li><a class="nav-link scrollto" href="../Frontend/logout.php" onclick="return confirm(' Confirmer la deconnexion ?')";>Déconnexion</a></li>
-          <li><a class="nav-link scrollto" href="#">Bienvenue, <?= $_SESSION['username'] ?></a></li>
+            <li class="dropdown"><a href="#" style="text_align:center;position:relative; left:2vh;"> Bienvenue <?= $_SESSION['username'] ?></a>
+              <ul>
+                <li><a class="nav-link scrollto" href="#" data-bs-toggle="modal" data-bs-target="#">Profil</a></li>
+                <li><a class="nav-link scrollto" href="../Frontend/logout.php" onclick="return confirm(' Confirmer la deconnexion ?')";>Déconnexion</a></li>
+              </ul>
+          </li>    
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

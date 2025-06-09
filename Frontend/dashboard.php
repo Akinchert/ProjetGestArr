@@ -4,9 +4,14 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: ./Frontend/login.php');
     exit();
 }
+
 require('..//Backend/expiration_session.php');
 require ('../Backend/traitements.php');
 //require ('../Backend/traiter_dmd.php');
+if (isset($_GET['suivi'])) {
+    $numero_suivi = htmlspecialchars($_GET['suivi']);
+    echo "<script>alert('Votre demande a été envoyée avec succès, veuillez consulter votre email pour recuperer le numero de suivi');</script>";
+} 
 ?>
   
 <!DOCTYPE html>

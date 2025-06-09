@@ -1,5 +1,21 @@
-<?php if(isset($info)){ echo'<script> alert(\''.$info.'\')</script>';  }  ?>
-<?php if(isset($confirmation)){ echo'<script> alert(\''.$confirmation.'\')</script>';  } ?>
+<?php
+    if(isset($info)){
+      echo ' 
+      <script>
+      alert(\''.$info.'\')
+      </script>
+      ';
+    }    
+    ?>
+    <?php
+    if(isset($confirmationn)){
+      echo ' 
+      <script>
+      alert(\''.$confirmationn.'\')
+      </script>
+      ';
+    }    
+    ?>
     
 
 <div class="row">
