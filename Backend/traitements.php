@@ -99,10 +99,10 @@ if(isset($_POST['submitRe'])) {
     
 }
     $count=1;
-    $reponse = $pdo ->query("SELECT * FROM registre ORDER BY date_demande DESC");
+    $reponse = $pdo ->query("SELECT * FROM registre ORDER BY id ASC");
 
     $countt=1;
-    $Reponse = $pdo ->query("SELECT * FROM reponse ORDER BY date_traitement DESC");   
+    $Reponse = $pdo ->query("SELECT * FROM reponse ORDER BY id ASC");   
 
     if(isset($_POST['submitca'])) {
         $date = $_POST['date'];

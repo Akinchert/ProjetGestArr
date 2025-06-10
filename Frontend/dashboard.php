@@ -67,7 +67,7 @@ if (isset($_GET['suivi'])) {
       </div>
 
       <div class="hero-info" data-aos="zoom-in" data-aos-delay="100">
-        <h2><img src="../img/mairie.jpe" alt="" class="img-fluid"> <br>Gestion des Services d'Arrondissement</h2>
+        <h2><img src="../img/mairie.png" alt="" class="img-fluid"> <br>Gestion des Services d'Arrondissement</h2>
         
         <!-- <div>
           <a href="#" class="btn-get-started scrollto" data-bs-toggle="modal" data-bs-target="#mentionsLegales">A propos</a>

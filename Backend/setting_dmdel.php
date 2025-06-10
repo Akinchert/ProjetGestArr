@@ -12,30 +12,9 @@ $message = '';
 $id = $_GET['id'] ?? 0;
 
 if ($id) {
-    $stmt = $pdo->prepare("SELECT * FROM registre WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT * FROM demandes WHERE id = ?");
     $stmt->execute([$id]);
     $service = $stmt->fetch();
-
-//     if (!$service) {
-//         header('Location: ../Admin/dashboard');
-//         exit();
-//     }
-
-//     if(isset($_POST['submit'])) {
-//         $nom_demandeur = htmlspecialchars($_POST['nom_demandeur']);
-//         $email = htmlspecialchars($_POST['email']);        
-
-//         $stmt = $pdo->prepare("UPDATE registre SET nom_demandeur = ?, emeil = ? WHERE id = ?");
-//         if ($stmt->execute([$nom_demandeur, $email, $id])) {
-//             header('Location: ../Admin/dashboard');
-//             exit();
-//         } else {
-//             $message = "Erreur lors de la modification du service.";
-//         }
-//     }
-// } else {
-//     header('Location: ../Admin/dashboard');
-//     exit();
 }
 ?>
 
@@ -110,17 +89,17 @@ if ($id) {
             <label class="form-label">Code de suivi</label>
             <input type="text" name="numero_suivi" class="form-control" value="<?= htmlspecialchars($service['numero_suivi']) ?>" required>
         </div>
-        <div class="mb-3">
+         <div class="mb-3">
             <label class="form-label">Nom demandeur</label>
             <input type="text" name="nom_demandeur" class="form-control" value="<?= htmlspecialchars($service['nom_demandeur']) ?>" required>
         </div>
         <div class="mb-3">
             <label class="form-label">Email</label>
             <input type="text" name="email" class="form-control" value="<?= htmlspecialchars($service['email']) ?>" required>
-        </div>        
-         <div class="mb-3">
+        </div>
+        <div class="mb-3">
             <label class="form-label">Service</label>
-            <input type="text" name="nom_demandeur" class="form-control" value="<?= htmlspecialchars($service['service']) ?>" required>
+            <input type="text" name="service" class="form-control" value="<?= htmlspecialchars($service['service']) ?>" required>
         </div>
         <div class="mb-3">
             <label class="form-label">Fichier PDF de réponse</label>

@@ -569,6 +569,7 @@
                         <tr>
                             <th>Numero Enregistrement</th>
                             <th>Demandeur</th>
+                            <th>Service</th>
                             <th>Email</th>
                             <th>Fichier</th>
                             <th>Date</th>
@@ -580,6 +581,7 @@
                             <tr> 
                                 <td><?= htmlspecialchars($r['numero_suivi']) ?></td>
                                 <td><?= htmlspecialchars($r['nom_demandeur']) ?></td>
+                                <td><?= htmlspecialchars($r['service']) ?></td>
                                 <td><?= htmlspecialchars($r['email']) ?></td>
                                 <td><?= htmlspecialchars($r['fichier_pdf']) ?></td>
                                 <td><?= ($r['date_traitement']) ?></td>

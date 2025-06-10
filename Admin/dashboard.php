@@ -8,6 +8,10 @@ if (!isset($_SESSION['user_id'])) {
 
 require('..//Backend/expiration_session.php');
 require ('../Backend/traitements.php');
+if (isset($_GET['suivi'])) {
+    $numero_suivi = htmlspecialchars($_GET['suivi']);
+    echo "<script>alert('La demande est envoyée avec succès');</script>";
+} 
 //require ('../Backend/setting.php');
 ?>
 <!DOCTYPE html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 07 juin 2025 à 23:21
+-- Généré le : mar. 10 juin 2025 à 02:03
 -- Version du serveur : 10.4.20-MariaDB
 -- Version de PHP : 8.0.8
 
@@ -132,7 +132,35 @@ INSERT INTO `demandes` (`id`, `numero_suivi`, `nom_demandeur`, `email`, `service
 (45, '10H/6844a9b268203', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844a9b26826d_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
 (46, '10H/6844aacb2df97', 'Ololade AKANNI', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844aacb2dfc4_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
 (47, '10H/6844aaf26c0c7', 'Houdath BADAROU', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844aaf26c0ec_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
-(48, '10H/6844abbe09f93', 'AKANY Liliane', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844abbe09fb7_Facture_EM01151777-7_20250425162023.pdf', 'En attente');
+(48, '10H/6844abbe09f93', 'AKANY Liliane', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844abbe09fb7_Facture_EM01151777-7_20250425162023.pdf', 'En attente'),
+(49, '10H/6844b29415312', 'ANANNI Hikmath', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-07', '6844b2941533f_Facture_EM01151777-7_20250425154822.pdf', 'En attente'),
+(50, '10H/6844b4265a75a', 'Ololade AKANNI', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-07', '6844b4265a77a_Facture_EM01151777-7_20250425154926.pdf', 'En attente'),
+(51, '10H/6844b4545c2d5', 'ANANNI Hikmath', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-07', '6844b4545c2f7_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(52, '10H/6844b82dde18f', 'ALALA Tokpe', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-08', '6844b82dde1bd_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(53, '10H/6844b8a06dd06', 'Lamidi', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-08', '6844b8a06dd21_Facture_EM01151777-7_20250425154822.pdf', 'En attente'),
+(54, '10H/6844b971e897e', 'AKADIRI Faicole', 'akin@gmail.com', 'Copie Integrale', '2025-06-08', '6844b971e89a0_Facture_EM01151777-7_20250425154926.pdf', 'En attente'),
+(55, '10H/6844b9e87cc2f', 'AKADIRI Faicole', 'akin@gmail.com', 'Copie Integrale', '2025-06-08', '6844b9e87cc4e_Facture_EM01151777-7_20250425154926.pdf', 'En attente'),
+(56, '10H/6844ba400fdce', 'AKADIRI Faicole', 'akin@gmail.com', 'Copie Integrale', '2025-06-08', '6844ba400fdf1_Facture_EM01151777-7_20250425154926.pdf', 'En attente'),
+(57, '10H/6844bab944049', 'AKADIRI Faicole', 'akinchert@yahoo.fr', 'Copie simple', '2025-06-08', '6844bab944064_Facture_EM01151777-7_20250425154822.pdf', 'En attente'),
+(58, '10H/6844bb52bb1c9', 'Houdath BADAROU', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-08', '6844bb52bb1f3_Facture_EM01151777-7_20250425154749.pdf', 'En attente'),
+(59, '10H/6844c47dc4304', 'olaitan DANGBE', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-08', '6844c47dc439e_Mentions_légales Arrondissement-3.pdf', 'En attente'),
+(60, '10H/6844c50249e39', 'ANANNI Hikmath', 'akinchert@yahoo.fr', 'Copie Integrale', '2025-06-08', '6844c50249e52_Facture_EM01151777-7_20250425154822.pdf', 'En attente'),
+(61, '10H/684612c058188', 'olaitan DANGBE', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '684612c0581a9_Facture_EM01151777-7_20250425154822.pdf', 'Traitée'),
+(62, '10H/6846135badd99', 'Ololade AKANNI', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '6846135baddcc_Facture_EM01151777-7_20250425154926.pdf', 'En attente'),
+(63, '10H/684613afe094f', 'MARTIS Okanlawan', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '684613afe0974_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(64, '10H/6846145c06b56', 'olaitan DANGBE', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '6846145c06b83_Facture_EM01151777-7_20250425154749 (1).pdf', 'En attente'),
+(65, '10H/684614a0bad0c', 'ASSOGBA  Jean', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '684614a0bad32_Mentions_légales Arrondissement-3.pdf', 'En attente'),
+(66, '10H/684617206398d', 'ALALA Tokpe', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '68461720639b7_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(67, '10H/684618bb3a2e1', 'Lamidi', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '684618bb3a30d_Mentions_légales Arrondissement-2.pdf', 'En attente'),
+(68, '10H/68461f1d7ebf6/MPN/SE/SAA1/divEC', 'ANANNI Hikmath', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '68461f1d7ec21_Facture_EM01151777-7_20250425154822.pdf', 'En attente'),
+(69, '10H/6846214ab79c0/MPN/ARR1/SE/SAA/divEC', 'Ololade AKANNI', 'akinchert619@gmail.com', 'Copie simple', '2025-06-09', '6846214ab79eb_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(70, '10H/68471372e5489/MPN/ARR1/SE/SAA/divEC', 'AMANI Latifatoulai', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '68471372e54a6_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(71, '10H/68472494a7bac/MPN/ARR1/SE/SAA/divEC', 'Houdath BADAROU', 'akinchert619@gmail.com', 'Copie simple', '2025-06-09', '68472494a7bcc_Facture_EM01151777-7_20250425154926.pdf', 'En attente'),
+(72, '10H/684727fec1899/MPN/ARR1/SE/SAA/divEC', 'halil AKADIRI', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '684727fec18e8_Facture_EM01151777-7_20250425154822.pdf', 'En attente'),
+(73, '10H/68472e89def2d/MPN/ARR1/SE/SAA/divEC', 'AKADIRI Faicole', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '68472e89def4c_Facture_EM01151777-7_20250425154749.pdf', 'En attente'),
+(74, '10H/68473d9180c9c/MPN/ARR1/SE/SAA/divEC', 'Ololade AKANNI', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '68473d9180cb4_Facture_EM01151777-7_20250425154822.pdf', 'En attente'),
+(75, '10H/6847402f46f87/MPN/ARR1/SE/SAA/divEC', 'ALALA Tokpe', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '6847402f46fa8_Facture_EM01151777-7_20250425160033.pdf', 'En attente'),
+(76, '10H/684742636b23c/MPN/ARR1/SE/SAA/divEC', 'AKADIRI Raimi', 'akinchert619@gmail.com', 'Copie Integrale', '2025-06-09', '684742636b274_Facture_EM01151777-7_20250425154749.pdf', 'En attente');
 
 -- --------------------------------------------------------
 
@@ -165,7 +193,11 @@ INSERT INTO `reclamations` (`id`, `nom_citoyen`, `email`, `type_reclamation`, `m
 (8, 'akinchert', 'akinchert@yahoo.fr', 'Plaintes', 'Manque de respect', '2025-05-13 18:16:36', 'Non traitée'),
 (9, 'Jeanne', 'akin@gmail.com', 'Doléance', 'akim est un cas', '2025-05-14 18:57:51', 'Non traitée'),
 (10, 'akadiri Maida', 'S@GMAIL.COM', 'Suggestion', 'dddddddddddd', '2025-05-15 16:45:19', 'Non traitée'),
-(11, 'akadiri Maida', 'S@GMAIL.COM', 'Suggestion', 'dddddddddddd', '2025-05-15 16:45:37', 'Non traitée');
+(11, 'akadiri Maida', 'S@GMAIL.COM', 'Suggestion', 'dddddddddddd', '2025-05-15 16:45:37', 'Non traitée'),
+(12, 'akadiri Maida', 'akinchert619@gmail.com', 'Suggestion', 'Revoyez le code', '2025-06-09 02:13:00', 'Non traitée'),
+(13, 'akadiri Maida', 'akinchert619@gmail.com', 'Suggestion', 'Revoyez le code', '2025-06-09 02:18:44', 'Non traitée'),
+(14, 'akadiri Maida', 'akinchert619@gmail.com', 'Suggestion', 'Revoyez le code', '2025-06-09 02:19:46', 'Non traitée'),
+(15, 'akadiri Maida', 'akinchert619@gmail.com', 'Suggestion', 'Revoyez le code', '2025-06-09 02:21:24', 'Non traitée');
 
 -- --------------------------------------------------------
 
@@ -212,21 +244,32 @@ CREATE TABLE `reponse` (
   `numero_suivi` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `nom_demandeur` varchar(100) NOT NULL,
+  `service` varchar(100) NOT NULL,
   `fichier_pdf` longblob NOT NULL,
   `date_traitement` date DEFAULT NULL,
-  `statut` varchar(100) NOT NULL
+  `statut` varchar(100) NOT NULL,
+  `envoyee` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `reponse`
 --
 
-INSERT INTO `reponse` (`id`, `numero_suivi`, `email`, `nom_demandeur`, `fichier_pdf`, `date_traitement`, `statut`) VALUES
-(1, 'REG.1ER.ARR/PN-6836ebc45a94e', 'akinchert619@gmail.com', 'Ololade AKANNI', 0x313734383539353734335f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, NULL, 'en attente'),
-(2, 'REG.1ER.ARR/PN-6837485b8d3a6', 'akinchert619@gmail.com', 'Ololade AKANNI', 0x313734383539363939345f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, '0000-00-00', 'Traité'),
-(3, 'REG.1ER.ARR/PN-68397a1f99645', 'admin@gmail.com', 'ALAO Brice', 0x313734383539373434345f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, '2025-05-30', 'Traité'),
-(4, 'REG.1ER.ARR/PN-6836ebc45a94e', 'akinchert619@gmail.com', 'Ololade AKANNI', 0x313734383730363738325f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, '2025-05-31', 'Traité'),
-(5, 'REG.1ER.ARR/PN-683f1ec3534b6', 'akinchert619@gmail.com', 'ASSOGBA  Jean', 0x313734383936373232335f466163747572655f454d30313135313737372d375f32303235303432353135343733322e706466, '2025-06-03', 'Traité');
+INSERT INTO `reponse` (`id`, `numero_suivi`, `email`, `nom_demandeur`, `service`, `fichier_pdf`, `date_traitement`, `statut`, `envoyee`) VALUES
+(1, 'REG.1ER.ARR/PN-6836ebc45a94e', 'akinchert619@gmail.com', 'Ololade AKANNI', '', 0x313734383539353734335f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, NULL, 'en attente', 1),
+(2, 'REG.1ER.ARR/PN-6837485b8d3a6', 'akinchert619@gmail.com', 'Ololade AKANNI', '', 0x313734383539363939345f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, '0000-00-00', 'Traité', 0),
+(3, 'REG.1ER.ARR/PN-68397a1f99645', 'admin@gmail.com', 'ALAO Brice', '', 0x313734383539373434345f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, '2025-05-30', 'Traité', 0),
+(4, 'REG.1ER.ARR/PN-6836ebc45a94e', 'akinchert619@gmail.com', 'Ololade AKANNI', '', 0x313734383730363738325f466163747572655f454d30313135313737372d375f32303235303432353136323032332e706466, '2025-05-31', 'Traité', 1),
+(5, 'REG.1ER.ARR/PN-683f1ec3534b6', 'akinchert619@gmail.com', 'ASSOGBA  Jean', '', 0x313734383936373232335f466163747572655f454d30313135313737372d375f32303235303432353135343733322e706466, '2025-06-03', 'Traité', 1),
+(6, '10H/6846145c06b56', 'akinchert619@gmail.com', 'Copie Integrale', '', 0x313734393437383730365f466163747572655f454d30313135313737372d375f32303235303432353135343832322e706466, '2025-06-09', 'Traité', 1),
+(7, '10H/684612c058188', 'akinchert619@gmail.com', 'olaitan DANGBE', 'Copie Integrale', 0x313734393437393532395f466163747572655f454d30313135313737372d375f32303235303432353135343932362e706466, '2025-06-09', 'Traité', 1),
+(8, '10H/68471372e5489/MPN/ARR1/SE/SAA/divEC', 'akinchert619@gmail.com', 'AMANI Latifatoulai', 'Copie Integrale', 0x313734393438383639375f466163747572655f454d30313135313737372d375f32303235303432353135343734392e706466, '2025-06-09', 'Traité', 1),
+(9, '10H/68472494a7bac/MPN/ARR1/SE/SAA/divEC', 'akinchert619@gmail.com', 'Houdath BADAROU', 'Copie simple', 0x313734393439323934355f466163747572655f454d30313135313737372d375f3230323530343235313534373439202831292e706466, '2025-06-09', 'Traité', 1),
+(10, '10H/684727fec1899/MPN/ARR1/SE/SAA/divEC', 'akinchert619@gmail.com', 'halil AKADIRI', 'Copie Integrale', 0x313734393439343030385f466163747572655f454d30313135313737372d375f32303235303432353135343734392e706466, '2025-06-09', 'Traité', 1),
+(11, '10H/68472e89def2d/MPN/ARR1/SE/SAA/divEC', 'akinchert619@gmail.com', 'AKADIRI Faicole', 'Copie Integrale', 0x313734393439353437315f466163747572655f454d30313135313737372d375f32303235303432353135343932362e706466, '2025-06-09', 'Traité', 1),
+(12, '10H/68473d9180c9c/MPN/ARR1/SE/SAA/divEC', 'akinchert619@gmail.com', 'Ololade AKANNI', 'Copie Integrale', 0x313734393439393335305f466163747572655f454d30313135313737372d375f32303235303432353135343832322e706466, '2025-06-09', 'Traité', 1),
+(13, '10H/6847402f46f87/MPN/ARR1/SE/SAA/divEC', 'akinchert619@gmail.com', 'ALALA Tokpe', 'Copie Integrale', 0x313734393439393939325f466163747572655f454d30313135313737372d375f32303235303432353135343932362e706466, '2025-06-09', 'Traité', 1),
+(14, '10H/684742636b23c/MPN/ARR1/SE/SAA/divEC', 'akinchert619@gmail.com', 'AKADIRI Raimi', 'Copie Integrale', 0x313734393530303535335f466163747572655f454d30313135313737372d375f32303235303432353136303033332e706466, '2025-06-09', 'Traité', 1);
 
 -- --------------------------------------------------------
 
@@ -349,6 +392,19 @@ INSERT INTO `suivi_dossiers` (`id`, `id_demande`, `action`, `effectue_par`, `dat
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `tentatives_connexion`
+--
+
+CREATE TABLE `tentatives_connexion` (
+  `id` int(11) NOT NULL,
+  `ip_address` varchar(50) NOT NULL,
+  `date_tentative` datetime NOT NULL DEFAULT current_timestamp(),
+  `reussie` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -371,7 +427,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`
 (3, 'akinchert', 'akinchert@yahoo.fr', '$2y$10$NfsV7OrnhOLmiE0DzuYyCuV6P/jB6rZwKS/OgzDOj1O6S9zPNWdX2', 'client', '2025-05-06 22:14:29'),
 (4, 'akadiri', 'akin@gmail.com', '$2y$10$mXUqHevkod5LZFaf//jH1ulttC2idQiUXqzCmrzzyoh1hzYxfeI4e', 'admin', '2025-05-06 22:50:55'),
 (7, 'admin1', 'akinchert@gmail.com', '123456', 'admin', '2025-05-08 21:00:31'),
-(8, 'halil', 'k@k.fr', '$2y$10$ouwhYYx0QBTWtC3uBKuYye6QZ0U1swwrFOUjfAy2kn3UH3TN/sSNK', 'personnel', '2025-05-08 21:20:18');
+(8, 'halil', 'k@k.fr', '$2y$10$ouwhYYx0QBTWtC3uBKuYye6QZ0U1swwrFOUjfAy2kn3UH3TN/sSNK', 'personnel', '2025-05-08 21:20:18'),
+(12, 'ololade', 'akinchert619@gmail.com', '$2y$10$fljVBv.alPCHUnA9S91mNuLmN9G1k09YmWakJLYUFDzQWHm9/duMq', 'client', '2025-06-08 22:23:32');
 
 --
 -- Index pour les tables déchargées
@@ -428,11 +485,18 @@ ALTER TABLE `suivi_dossiers`
   ADD KEY `id_demande` (`id_demande`);
 
 --
+-- Index pour la table `tentatives_connexion`
+--
+ALTER TABLE `tentatives_connexion`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `unique_username_email` (`username`,`email`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -454,13 +518,13 @@ ALTER TABLE `cdepart`
 -- AUTO_INCREMENT pour la table `demandes`
 --
 ALTER TABLE `demandes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT pour la table `reclamations`
 --
 ALTER TABLE `reclamations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `registre`
@@ -472,7 +536,7 @@ ALTER TABLE `registre`
 -- AUTO_INCREMENT pour la table `reponse`
 --
 ALTER TABLE `reponse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `services`
@@ -487,10 +551,16 @@ ALTER TABLE `suivi_dossiers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
+-- AUTO_INCREMENT pour la table `tentatives_connexion`
+--
+ALTER TABLE `tentatives_connexion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Contraintes pour les tables déchargées

@@ -11,7 +11,7 @@
                     <?php
                         $count=1;
                         $donnees= new PDO('mysql:host=localhost;dbname=gestion_services;charset=utf8', 'root', '');
-                        $reponse = $donnees ->query("SELECT * FROM demandes ORDER BY date_demande DESC");
+                        $reponse = $donnees ->query("SELECT * FROM demandes ORDER BY id ASC");
                     ?>
 
               <!-- Default Table -->
@@ -23,9 +23,10 @@
                           <th>Email</th>
                           <th>Demande</th>
                           <th>Date</th>
-                          <th>Fichier</th>
+                          <th>Piece jointe</th>
                           <th>Action</th>
                           <th>Status</th>
+                          <th>Fichier réponse</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -58,6 +59,7 @@
                                     <option <?= $req['statut'] == 'Traitée' ? 'selected' : '' ?>>Traitée</option>
                                 </select>
                                 </form></td>
+                                <td><a class="btn btn-success btn-sm" href="../Backend/setting_dmdel.php?id=<?= $req['id'] ?>">Ajouter le fichier</a></td>
                             </tr>
                   <?php $count++; } ?>
                 </tbody>
